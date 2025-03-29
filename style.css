@@ -1,10 +1,10 @@
-
 .page-heading {
   font-size: 1.8rem;
-  margin-top: 2rem;
+  margin-top: 1.2rem;   /* 原来是 2rem，改小一点 */
   margin-bottom: 2rem;
   color: #000;
 }
+
 
 .pub-container h1,
 .pub-container .page-heading {
@@ -222,11 +222,16 @@ nav a:hover {
 }
 
 .about-slogan {
-  text-align: center;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
+  font-weight: 500;
+  font-style: italic;
   color: #666;
-  margin-bottom: 3rem;
+  text-align: left;
+  max-width: 960px;
+  margin: 0 auto 3rem auto;
+  padding: 0 1rem;
 }
+
 
 .about-banner {
   width: 100vw;
@@ -235,16 +240,17 @@ nav a:hover {
   margin-left: calc(-50vw + 50%);
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-end;  /* ✅ 图片与底部对齐 */
 }
 
 .about-photo {
-  width: 180px;
-  height: 180px;
+  width: 240px;           /* ✅ 更大 */
+  height: 240px;
   object-fit: cover;
   border-radius: 8px;
-  margin-left: calc((100vw - 960px) / 2); /* 与主内容左边距对齐 */
+  margin-left: calc((100vw - 960px) / 2);
 }
+
 
 .about-text {
   max-width: 960px;
