@@ -8,30 +8,33 @@
   <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
   <style>
   .home-banner {
-    width: 100vw;
-    background-color: #f2f2f2;
-    margin-left: calc(-50vw + 50%);
-    display: flex;
-    justify-content: flex-start;
-    align-items: center; /* ✅ 垂直居中 slogan */
-    padding: 2rem 0;
-  }
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  background-color: #f2f2f2;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  padding: 0;
+  height: 320px; /* ✅ 灰框高度 */
+  position: relative;
+}
 
-  .home-photo {
-    width: 240px;
-    height: 240px;
-    object-fit: cover;
-    margin-left: calc((100vw - 960px) / 2);
-    margin-bottom: -20px; /* ✅ 往下溢出一点点，模拟贴底 */
-  }
+.home-photo {
+  width: 300px;           /* ✅ 更大 */
+  height: 300px;
+  object-fit: cover;
+  margin-left: calc((100vw - 960px) / 2);
+  align-self: end;        /* ✅ 照片贴底 */
+}
 
-  .home-slogan {
-    color: #000;
-    font-size: 1.4rem;
-    font-weight: 600;
-    margin-left: 2rem;
-    max-width: 480px;
-  }
+.home-slogan {
+  color: #000;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-left: 2rem;
+  max-width: 480px;
+}
+
 
 
 
