@@ -1,3 +1,19 @@
+
+.page-heading {
+  font-size: 1.8rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  color: #000;
+}
+
+.pub-container h1,
+.pub-container .page-heading {
+  font-size: 1.8rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+
 /* Project */
 .header-inner {
   max-width: 960px;
