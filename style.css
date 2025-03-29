@@ -1,26 +1,63 @@
-body {
-    font-family: sans-serif;
+/* Reset & Base */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
   }
   
-  nav {
-    background: #333;
-    padding: 1rem;
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #fff;
+    color: #000;
+    line-height: 1.6;
   }
   
-  nav ul {
-    list-style: none;
+  /* Header */
+  header {
     display: flex;
-    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid #eee;
   }
   
-  nav ul li a {
-    color: white;
+  .site-title a {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #000;
     text-decoration: none;
   }
   
-  main {
+  nav a {
+    margin-left: 1.5rem;
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    font-size: 1rem;
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Gallery */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
     padding: 2rem;
+  }
+  
+  .gallery img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .gallery img:hover {
+    transform: scale(1.02);
   }
   
