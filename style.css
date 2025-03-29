@@ -12,15 +12,17 @@ main, .pub-container {
 
 .page-heading {
   font-size: 1.8rem;
-  margin-top: 0; /* ✅ 确保标题本身没有额外 margin */
-  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
   color: #000;
+  /* ❌ 不要再设置 padding、max-width、margin */
 }
+
 
 .content-wrapper {
   max-width: 960px;
   margin: 0 auto;
-  padding: 1.5rem 1rem;
+  padding: 0 1rem;
 }
 
 
