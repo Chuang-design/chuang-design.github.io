@@ -151,3 +151,17 @@ nav a:hover {
   color: #666;
   font-weight: normal;
 }
+
+.pub-note {
+  font-size: 0.8rem;
+  color: #888;
+  margin-top: -1rem;
+  margin-bottom: 2rem;
+}
+
+.award-icon {
+  margin-right: 0.4rem;
+  font-size: 1rem;
+  vertical-align: middle;
+  cursor: help;
+}
