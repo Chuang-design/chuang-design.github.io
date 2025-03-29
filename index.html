@@ -6,6 +6,40 @@
   <title>Chuang Chen</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+  <style>
+    /* Page animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 4rem;
+      padding: 2rem 1rem;
+      border-top: 1px solid #eee;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #888;
+    }
+
+    /* Hover enhancements */
+    .project-card img:hover {
+      transform: scale(1.04);
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -21,92 +55,99 @@
   </header>
 
   <main class="pub-container">
-
-    <!-- 🔹 About Section -->
-    <h1 class="page-heading">About</h1>
-    <p class="about-slogan"><em>Fabricating a smarter, friendlier, and more sustainable future.</em></p>
-    <div class="about-text">
-      <p>
-        My name is Chuang Chen. I am currently pursuing a master's degree at Zhejiang University's Polytechnic Institute, advised by Prof. Guanyun Wang at 
-        <a href="https://design.zju.edu.cn/guanyunlab/" target="_blank">Guanyun Lab</a>.
-      </p>
-      <p>
-        My research focuses on personal fabrication – key technology that empowers people by combining innovation with sustainability. I envision a world where customized production improves lives while protecting our planet.
-      </p>
-      <p>
-        <a href="about.html">Read full bio →</a>
-      </p>
+    <!-- Hero -->
+    <div class="content-wrapper fade-in" style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;">
+      <img src="images/profile.jpg" alt="Chuang Chen" style="width: 140px; height: 140px; object-fit: cover;">
+      <div>
+        <h1 class="page-heading" style="margin-top: 0;">Chuang Chen</h1>
+        <p class="about-slogan" style="margin-bottom: 0;">
+          <em>Fabricating a smarter, friendlier, and more sustainable future.</em>
+        </p>
+      </div>
     </div>
 
-    <!-- 🔹 Project Section -->
-    <h1 class="page-heading">Projects</h1>
-    <section class="gallery">
-      <div class="project-card">
-        <div class="black-bar"></div>
-        <a href="TH-Wood.html"><img src="images/TH-Wood.png" alt="TH-Wood"></a>
-        <div class="project-info">
-          <div class="project-title">TH-Wood</div>
-          <div class="project-date">April 2025</div>
-        </div>
-      </div>
+    <!-- About -->
+    <div class="content-wrapper fade-in" style="margin-top: 2.5rem;">
+      <h2 class="gallery-heading">About</h2>
+      <p>
+        I'm a researcher exploring novel materials and hardware that enable interactive, intelligent, and sustainable futures. Currently a master's student at Zhejiang University advised by Prof. Guanyun Wang.
+      </p>
+      <p><a href="about.html">Read full bio →</a></p>
+    </div>
 
-      <div class="project-card">
-        <div class="black-bar"></div>
-        <a href="HydroSkin.html"><img src="images/Hydroskin.png" alt="HydroSkin"></a>
-        <div class="project-info">
-          <div class="project-title">HydroSkin</div>
-          <div class="project-date">May 2024</div>
+    <!-- Projects -->
+    <div class="content-wrapper fade-in" style="margin-top: 3rem;">
+      <h2 class="gallery-heading">Projects</h2>
+      <section class="gallery">
+        <div class="project-card">
+          <div class="black-bar"></div>
+          <a href="TH-Wood.html"><img src="images/TH-Wood.png" alt="TH-Wood"></a>
+          <div class="project-info">
+            <div class="project-title">TH-Wood</div>
+            <div class="project-date">2025</div>
+          </div>
         </div>
-      </div>
 
-      <div class="project-card">
-        <div class="black-bar"></div>
-        <a href="SnapInflatable.html"><img src="images/SnapInflatable.png" alt="SnapInflatable"></a>
-        <div class="project-info">
-          <div class="project-title">SnapInflatable</div>
-          <div class="project-date">May 2024</div>
+        <div class="project-card">
+          <div class="black-bar"></div>
+          <a href="HydroSkin.html"><img src="images/Hydroskin.png" alt="HydroSkin"></a>
+          <div class="project-info">
+            <div class="project-title">HydroSkin</div>
+            <div class="project-date">2024</div>
+          </div>
         </div>
-      </div>
-    </section>
-    <p style="margin-top: 1rem;"><a href="project.html">View all projects →</a></p>
 
-    <!-- 🔹 Publication Section -->
-    <h1 class="page-heading">Publications</h1>
-    <div class="pub-item">
-      <img src="images/TH-Wood.png" class="pub-thumbnail" alt="Pub 1">
-      <div class="pub-text">
+        <div class="project-card">
+          <div class="black-bar"></div>
+          <a href="SnapInflatable.html"><img src="images/SnapInflatable.png" alt="SnapInflatable"></a>
+          <div class="project-info">
+            <div class="project-title">SnapInflatable</div>
+            <div class="project-date">2024</div>
+          </div>
+        </div>
+      </section>
+      <p style="margin-top: 1rem;"><a href="project.html">View all projects →</a></p>
+    </div>
+
+    <!-- Publications -->
+    <div class="content-wrapper fade-in" style="margin-top: 3rem;">
+      <h2 class="gallery-heading">Selected Publications</h2>
+
+      <div class="pub-text" style="margin-bottom: 2rem;">
         <div class="pub-title">
           <span class="award-icon" title="Best Paper Honorable Mention Award">🏅</span>
-          <a href="https://example.com/th-wood-paper.pdf" target="_blank">TH-Wood: Developing Thermo-Hygro-Coordinating Driven Wood Actuators</a>
+          <a href="https://example.com/th-wood-paper.pdf" target="_blank">
+            TH-Wood: Developing Thermo-Hygro-Coordinating Driven Wood Actuators
+          </a>
         </div>
-        <div class="pub-authors">Guanyun Wang, <strong>Chuang Chen</strong>, ...</div>
-        <div class="pub-meta">ACM CHI 2025, Full Paper</div>
+        <div class="pub-authors">
+          Guanyun Wang, <strong>Chuang Chen</strong>, et al.
+        </div>
+        <div class="pub-meta">
+          ACM CHI 2025, Full Paper
+        </div>
       </div>
-    </div>
 
-    <div class="pub-item">
-      <img src="images/Hydroskin.png" class="pub-thumbnail" alt="Pub 2">
-      <div class="pub-text">
+      <div class="pub-text" style="margin-bottom: 2rem;">
         <div class="pub-title">
-          <a href="https://dl.acm.org/doi/10.1145/3613905.3651052" target="_blank">HydroSkin: Rapid Prototyping On-Skin Interfaces</a>
+          <a href="https://dl.acm.org/doi/10.1145/3613905.3651052" target="_blank">
+            HydroSkin: Rapid Prototyping On-Skin Interfaces
+          </a>
         </div>
-        <div class="pub-authors">Mengyang Li#, <strong>Chuang Chen#</strong>, ...</div>
-        <div class="pub-meta">ACM CHI 2024, LBW</div>
-      </div>
-    </div>
-
-    <div class="pub-item">
-      <img src="images/SnapInflatable.png" class="pub-thumbnail" alt="Pub 3">
-      <div class="pub-text">
-        <div class="pub-title">
-          <a href="https://dl.acm.org/doi/10.1145/3613904.3642933" target="_blank">SnapInflatables: Designing Inflatables for Interaction</a>
+        <div class="pub-authors">
+          Mengyang Li#, <strong>Chuang Chen#</strong>, et al.
         </div>
-        <div class="pub-authors">Yue Yang, <strong>Chuang Chen</strong>, ...</div>
-        <div class="pub-meta">ACM CHI 2024, Full Paper</div>
+        <div class="pub-meta">
+          ACM CHI 2024, LBW
+        </div>
       </div>
-    </div>
-    <p><a href="publication.html">View full publication list →</a></p>
 
+      <p><a href="publication.html">View full publication list →</a></p>
+    </div>
   </main>
+
+  <footer>
+    &copy; 2025 Chuang Chen · <a href="mailto:chenchuang@zju.edu.cn">your.email@example.com</a>
+  </footer>
 </body>
 </html>
