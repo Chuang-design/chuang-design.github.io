@@ -12,13 +12,15 @@
     line-height: 1.6;
   }
   
-  /* Header */
+  /* Header（导航栏也居中） */
   header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 2rem;
     border-bottom: 1px solid #eee;
+    max-width: 1000px;
+    margin: 0 auto;
   }
   
   .site-title a {
@@ -40,18 +42,33 @@
     text-decoration: underline;
   }
   
-  /* Gallery */
+  /* Gallery 主体居中，收窄 */
   .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-    padding: 2rem;
-    max-width: 1200px;     /* 限制宽度 */
-    margin: 0 auto;         /* 居中 */
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2.5rem;
+    padding: 3rem 2rem;
+    max-width: 900px;
+    margin: 0 auto;
   }
   
+  /* 单个项目卡片样式 */
+  .project-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   
-  .gallery img {
+  /* 黑色横线 */
+  .black-bar {
+    width: 100%;
+    height: 6px;
+    background-color: #000;
+    margin-bottom: 1rem;
+  }
+  
+  /* 项目图片 */
+  .project-card img {
     width: 100%;
     aspect-ratio: 1 / 1;
     object-fit: cover;
@@ -60,7 +77,24 @@
     cursor: pointer;
   }
   
-  .gallery img:hover {
+  .project-card img:hover {
     transform: scale(1.02);
+  }
+  
+  /* 项目信息样式 */
+  .project-info {
+    margin-top: 0.8rem;
+    text-align: center;
+  }
+  
+  .project-title {
+    font-weight: bold;
+    font-size: 1.05rem;
+  }
+  
+  .project-date {
+    font-size: 0.85rem;
+    color: #555;
+    margin-top: 0.3rem;
   }
   
