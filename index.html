@@ -7,37 +7,43 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
   <style>
-    /* Page animations */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 0.6s ease forwards;
+    .home-banner {
+      width: 100vw;
+      background-color: #f2f2f2;
+      margin-left: calc(-50vw + 50%);
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 3rem 0;
     }
 
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
+    .home-photo {
+      width: 240px;
+      height: 240px;
+      object-fit: cover;
+      margin-left: calc((100vw - 960px) / 2);
+    }
+
+    .home-slogan {
+      color: #000;
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-left: 2rem;
+      max-width: 480px;
+    }
+
+    @media (max-width: 768px) {
+      .home-banner {
+        flex-direction: column;
+        padding: 2rem 0;
       }
-    }
-
-    /* Footer */
-    footer {
-      margin-top: 4rem;
-      padding: 2rem 1rem;
-      border-top: 1px solid #eee;
-      text-align: center;
-      font-size: 0.85rem;
-      color: #888;
-    }
-
-    /* Hover enhancements */
-    .project-card img:hover {
-      transform: scale(1.04);
-    }
-
-    a:hover {
-      text-decoration: underline;
+      .home-photo {
+        margin-left: 0;
+      }
+      .home-slogan {
+        margin: 2rem;
+        text-align: center;
+      }
     }
   </style>
 </head>
@@ -55,19 +61,17 @@
   </header>
 
   <main class="pub-container">
- <!-- Hero Banner -->
-<div class="content-wrapper fade-in" style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;">
-  <img src="images/profile.jpg" alt="Chuang Chen" style="width: 240px; height: 240px; object-fit: cover;">
-  <div>
-    <p class="about-slogan" style="margin-bottom: 0;">
-      <em>Fabricating a smarter, friendlier, and more sustainable future.</em>
-    </p>
-  </div>
-</div>
 
+    <!-- 📷 Banner Section -->
+    <div class="home-banner">
+      <img src="images/profile.jpg" alt="Chuang Chen" class="home-photo" />
+      <div class="home-slogan">
+        <em>Fabricating a smarter, friendlier, and more sustainable future.</em>
+      </div>
+    </div>
 
-    <!-- About -->
-    <div class="content-wrapper fade-in" style="margin-top: 2.5rem;">
+    <!-- 🧠 About Summary -->
+    <div class="content-wrapper" style="margin-top: 3rem;">
       <h2 class="gallery-heading">About</h2>
       <p>
         I'm a researcher exploring novel materials and hardware that enable interactive, intelligent, and sustainable futures. Currently a master's student at Zhejiang University advised by Prof. Guanyun Wang.
@@ -75,9 +79,9 @@
       <p><a href="about.html">Read full bio →</a></p>
     </div>
 
-    <!-- Projects -->
-    <div class="content-wrapper fade-in" style="margin-top: 3rem;">
-      <h2 class="gallery-heading">Projects</h2>
+    <!-- 🧪 Projects Preview -->
+    <div class="content-wrapper" style="margin-top: 3rem;">
+      <h2 class="gallery-heading">Recent Projects</h2>
       <section class="gallery">
         <div class="project-card">
           <div class="black-bar"></div>
@@ -109,15 +113,15 @@
       <p style="margin-top: 1rem;"><a href="project.html">View all projects →</a></p>
     </div>
 
-    <!-- Publications -->
-    <div class="content-wrapper fade-in" style="margin-top: 3rem;">
+    <!-- 📝 Publications -->
+    <div class="content-wrapper" style="margin-top: 3rem;">
       <h2 class="gallery-heading">Selected Publications</h2>
 
       <div class="pub-text" style="margin-bottom: 2rem;">
         <div class="pub-title">
           <span class="award-icon" title="Best Paper Honorable Mention Award">🏅</span>
           <a href="https://example.com/th-wood-paper.pdf" target="_blank">
-            TH-Wood: Developing Thermo-Hygro-Coordinating Driven Wood Actuators
+            TH-Wood: Thermo-Hygro-Coordinating Wood Actuators
           </a>
         </div>
         <div class="pub-authors">
@@ -131,7 +135,7 @@
       <div class="pub-text" style="margin-bottom: 2rem;">
         <div class="pub-title">
           <a href="https://dl.acm.org/doi/10.1145/3613905.3651052" target="_blank">
-            HydroSkin: Rapid Prototyping On-Skin Interfaces
+            HydroSkin: On-Skin Interfaces via Hydrographic Printing
           </a>
         </div>
         <div class="pub-authors">
@@ -146,8 +150,11 @@
     </div>
   </main>
 
+
   <footer>
-    &copy; 2025 Chuang Chen · <a href="mailto:chenchuang@zju.edu.cn">your.email@example.com</a>
+    &copy; 2025 Chuang Chen · <a href="mailto:your.email@example.com">chenchuang@zju.edu.cn</a>
   </footer>
 </body>
 </html>
+
+
