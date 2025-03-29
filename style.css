@@ -15,8 +15,8 @@ main, .pub-container {
   margin-top: 0.5rem;
   margin-bottom: 1.5rem;
   color: #000;
-  /* ❌ 不要再设置 padding、max-width、margin */
 }
+
 
 
 .content-wrapper {
@@ -56,16 +56,7 @@ nav a:hover {
   text-decoration: underline;
 }
 
-.page-heading {
-  font-size: 1.8rem;
-  margin-bottom: 2rem;
-  margin-top: -0.5rem;
-  color: #000;
-  padding: 0 1rem;
-  max-width: 960px;
-  margin-left: auto;
-  margin-right: auto;
-}
+
 
 .gallery-heading {
   margin-top: 3rem;
@@ -225,12 +216,6 @@ nav a:hover {
   padding: 3rem 1rem;
 }
 
-.page-heading {
-  font-size: 1.8rem;
-  margin-bottom: 1.5rem;
-  margin-top: 2rem;
-  color: #000;
-}
 
 .about-slogan {
   font-size: 1.3rem;
