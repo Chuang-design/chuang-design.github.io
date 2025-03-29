@@ -13,7 +13,7 @@ main, .pub-container {
 .page-heading {
   font-size: 1.8rem;
   margin-top: 0; /* ✅ 确保标题本身没有额外 margin */
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   color: #000;
 }
 
