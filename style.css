@@ -6,7 +6,7 @@ html, body {
 
 /* Remove any top padding from main container */
 main, .pub-container {
-  padding-top: 1rem !important; /* ✅ 控制统一上边距 */
+  padding-top: 0.5rem !important; /* ✅ 控制统一上边距 */
 }
 
 
