@@ -68,10 +68,22 @@ nav a:hover {
 /* Gallery Layout */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* ⬅️ 卡片更大 */
-  gap: 2rem 1.5rem;
-  margin-top: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
 }
+.project-card img {
+  aspect-ratio: 1 / 1; /* 方形图 */
+}
+
+.gallery.project-page {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.gallery.project-page .project-card img {
+  aspect-ratio: 16 / 9; /* 或 4/3，看你喜好 */
+}
+
+
 
 .project-card {
   max-width: 100%;          /* ✅ 不要强行限制宽度 */
