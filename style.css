@@ -1,10 +1,21 @@
+/* === GLOBAL RESET === */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove any top padding from main container */
+main, .pub-container {
+  padding-top: 1.5rem !important; /* ✅ 控制统一上边距 */
+}
+
+
 .page-heading {
   font-size: 1.8rem;
-  margin-top: 0.8rem; /* ✅ 更紧凑 */
+  margin-top: 0; /* ✅ 确保标题本身没有额外 margin */
   margin-bottom: 2rem;
   color: #000;
 }
-
 
 
 
