@@ -153,10 +153,11 @@ nav a:hover {
 }
 
 .pub-note {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   color: #888;
   margin-top: -1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
+  line-height: 1.4;
 }
 
 .award-icon {
@@ -165,3 +166,34 @@ nav a:hover {
   vertical-align: middle;
   cursor: help;
 }
+
+/* About Page */
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+  gap: 2rem;
+}
+
+.about-text {
+  flex: 1 1 500px;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #333;
+}
+
+.about-photo {
+  flex: 1 1 300px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.about-photo img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
