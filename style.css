@@ -13,7 +13,7 @@ main, .pub-container {
 .page-heading {
   font-size: 1.8rem;
   margin-top: 0; /* ✅ 确保标题本身没有额外 margin */
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   color: #000;
 }
 
@@ -71,8 +71,8 @@ nav a:hover {
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 3rem 2rem;
-  padding: 3rem 1rem;
+  gap: 2rem 1.2rem;  /* ✅ 原来是 gap: 3rem 2rem; */
+  padding: 2rem 1rem; /* 可选：略减上 padding，更紧凑 */
   max-width: 960px;
   margin: 0 auto;
 }
