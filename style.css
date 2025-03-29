@@ -1,6 +1,6 @@
 .page-heading {
   font-size: 1.8rem;
-  margin-top: 1.2rem;   /* 原来是 2rem，改小一点 */
+  margin-top: 0.8rem;   /* 原来是 2rem，改小一点 */
   margin-bottom: 2rem;
   color: #000;
 }
@@ -236,19 +236,20 @@ nav a:hover {
 .about-banner {
   width: 100vw;
   background-color: #f2f2f2;
-  padding: 2rem 0;
   margin-left: calc(-50vw + 50%);
   display: flex;
   justify-content: flex-start;
-  align-items: flex-end;  /* ✅ 图片与底部对齐 */
+  align-items: flex-end;
+  height: 280px; /* ✅ 固定高度以对齐图片底部 */
+  padding-bottom: 0; /* 确保图片贴底 */
 }
 
 .about-photo {
-  width: 240px;           /* ✅ 更大 */
+  width: 240px;
   height: 240px;
   object-fit: cover;
-  border-radius: 8px;
   margin-left: calc((100vw - 960px) / 2);
+  border-radius: 0; /* ✅ 去掉圆角 */
 }
 
 
@@ -262,10 +263,11 @@ nav a:hover {
 
 .about-text a {
   color: #000;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 .about-text a:hover {
   text-decoration: underline;
 }
+
 
