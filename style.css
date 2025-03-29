@@ -1,9 +1,95 @@
+/* Header */
+.header-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 1rem;
+}
+
+.site-title a {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #000;
+  text-decoration: none;
+}
+
+nav a {
+  margin-left: 1.5rem;
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Gallery Layout */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 3rem 2rem;
+  padding: 3rem 1rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* Project Card */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 240px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.project-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.4rem;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.project-card img:hover {
+  transform: scale(1.02);
+}
+
+.black-bar {
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  margin-bottom: 0.4rem;
+}
+
+.project-info {
+  text-align: left;
+}
+
+.project-title {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+}
+
+.project-date {
+  font-size: 0.75rem;
+  color: #666;
+}
+
+/* Publication Page */
 .pub-container {
-  max-width: 900px;
+  max-width: 960px;
   margin: 0 auto;
   padding: 3rem 1rem;
   font-size: 0.95rem;
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
 .pub-container h1 {
@@ -12,17 +98,33 @@
 }
 
 .pub-item {
-  margin-bottom: 2rem;
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  align-items: flex-start;
+}
+
+.pub-thumbnail {
+  flex-shrink: 0;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 6px;
+  background-color: #eee;
+}
+
+.pub-text {
+  flex: 1;
 }
 
 .pub-title {
+  font-weight: 600;
   font-size: 1rem;
-  font-weight: 500;
 }
 
 .pub-title a {
-  text-decoration: none;
   color: #000;
+  text-decoration: none;
 }
 
 .pub-title a:hover {
@@ -32,7 +134,7 @@
 .pub-meta {
   font-weight: bold;
   color: #333;
-  margin-top: 0.2rem;
+  margin-top: 0.3rem;
 }
 
 .pub-info {
