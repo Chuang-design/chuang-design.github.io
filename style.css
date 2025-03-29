@@ -115,11 +115,14 @@ nav a:hover {
 
 .pub-text {
   flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .pub-title {
-  font-weight: 600;
-  font-size: 1rem;
+  font-size: 1.05rem;
+  font-weight: bold;
+  margin-bottom: 0.4rem;
 }
 
 .pub-title a {
@@ -131,14 +134,20 @@ nav a:hover {
   text-decoration: underline;
 }
 
-.pub-meta {
-  font-weight: bold;
-  color: #333;
-  margin-top: 0.3rem;
-}
-
-.pub-info {
+.pub-authors {
   font-size: 0.85rem;
   color: #666;
-  margin-top: 0.2rem;
+  font-weight: normal;
+  margin-bottom: 0.2rem;
+}
+
+.pub-authors strong {
+  font-weight: bold;
+  color: #444;
+}
+
+.pub-meta {
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: normal;
 }
