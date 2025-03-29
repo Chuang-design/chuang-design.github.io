@@ -7,34 +7,32 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
   <style>
-.home-banner {
-  width: 100vw;
-  background-color: #f2f2f2;
-  margin-left: calc(-50vw + 50%);
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  position: relative;
-  height: 280px; /* ✅ 固定高度，控制底对齐 */
-  padding: 0;
-}
+  .home-banner {
+    width: 100vw;
+    background-color: #f2f2f2;
+    margin-left: calc(-50vw + 50%);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; /* ✅ 垂直居中 slogan */
+    padding: 2rem 0;
+  }
 
-.home-photo {
-  width: 240px;
-  height: 240px;
-  object-fit: cover;
-  position: absolute;
-  bottom: 20px; /* ✅ 保持和灰框底部距离一致 */
-  left: calc((100vw - 960px) / 2);
-}
+  .home-photo {
+    width: 240px;
+    height: 240px;
+    object-fit: cover;
+    margin-left: calc((100vw - 960px) / 2);
+    margin-bottom: -20px; /* ✅ 往下溢出一点点，模拟贴底 */
+  }
 
-.home-slogan {
-  color: #000;
-  font-size: 1.4rem;
-  font-weight: 600;
-  margin-left: 270px; /* ✅ 避开照片宽度 + 留空 */
-  max-width: 480px;
-}
+  .home-slogan {
+    color: #000;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-left: 2rem;
+    max-width: 480px;
+  }
+
 
 
     @media (max-width: 768px) {
