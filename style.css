@@ -208,33 +208,58 @@ nav a:hover {
 
 
 /* About Page */
-.about-container {
-  display: flex;
-  flex-wrap: wrap;
+.about-wrapper {
   max-width: 960px;
   margin: 0 auto;
   padding: 3rem 1rem;
-  gap: 2rem;
+}
+
+.page-heading {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  margin-top: 2rem;
+  color: #000;
+}
+
+.about-slogan {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 3rem;
+}
+
+.about-banner {
+  width: 100vw;
+  background-color: #f2f2f2;
+  padding: 2rem 0;
+  margin-left: calc(-50vw + 50%);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.about-photo {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-left: calc((100vw - 960px) / 2); /* 与主内容左边距对齐 */
 }
 
 .about-text {
-  flex: 1 1 500px;
+  max-width: 960px;
+  margin: 3rem auto 0 auto;
   font-size: 0.95rem;
   line-height: 1.7;
   color: #333;
 }
 
-.about-photo {
-  flex: 1 1 300px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
+.about-text a {
+  color: #000;
+  text-decoration: none;
 }
 
-.about-photo img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
+.about-text a:hover {
+  text-decoration: underline;
 }
-
 
