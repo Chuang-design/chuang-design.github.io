@@ -360,8 +360,13 @@ nav a:hover {
   display: flex;
 }
 
-/* 响应式：移动端显示汉堡菜单 */
+/* 移动端：汉堡按钮显示，菜单收起 */
 @media (max-width: 768px) {
+  .header-inner {
+    flex-direction: row;
+    align-items: center;
+  }
+
   .menu-toggle {
     display: block;
   }
@@ -379,10 +384,5 @@ nav a:hover {
 
   .main-nav a {
     margin: 0.5rem 0;
-  }
-
-  .header-inner {
-    flex-direction: column;
-    align-items: flex-start;
   }
 }
