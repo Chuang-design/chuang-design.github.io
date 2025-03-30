@@ -50,7 +50,7 @@ footer a:hover {
   max-width: 960px;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* ✅ 左右分布 */
   align-items: center;
   padding: 1.5rem 1rem;
 }
@@ -345,7 +345,7 @@ nav a:hover {
 
 
     /*phone*/
-    /* 默认汉堡按钮隐藏 */
+ /* 默认汉堡按钮隐藏 */
 .menu-toggle {
   display: none;
   background: none;
@@ -355,16 +355,18 @@ nav a:hover {
   color: #000;
 }
 
-/* 默认导航显示 */
+/* 默认导航显示为横向 */
 .main-nav {
   display: flex;
+  gap: 1.5rem;
 }
 
-/* 移动端：汉堡按钮显示，菜单收起 */
+/* ✅ 手机端：菜单全宽展开，左对齐 */
 @media (max-width: 768px) {
   .header-inner {
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
   }
 
   .menu-toggle {
@@ -374,8 +376,11 @@ nav a:hover {
   .main-nav {
     display: none;
     flex-direction: column;
-    width: 100%;
+    width: 100%;             /* ✅ 占满整行 */
     margin-top: 1rem;
+    padding-left: 1rem;      /* ✅ 内容左对齐但留边距 */
+    background: white;       /* ✅ 背景白色 */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05); /* ✅ 轻微阴影 */
   }
 
   .main-nav.show {
@@ -384,5 +389,13 @@ nav a:hover {
 
   .main-nav a {
     margin: 0.5rem 0;
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    font-size: 1rem;
+  }
+
+  .main-nav a:hover {
+    text-decoration: underline;
   }
 }
