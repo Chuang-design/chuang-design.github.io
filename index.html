@@ -9,20 +9,38 @@
 </head>
 
 
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector(".main-nav");
 
-<body>
-  <header>
-    <div class="header-inner">
-      <div class="site-title"><a href="index.html">Chuang Chen</a></div>
-      <nav>
-        <a href="project.html">Project</a>
-        <a href="publication.html">Publication</a>
-        <a href="cv.html">CV</a>
-        <a href="about.html">About</a>
-      </nav>
-    </div>
-  </header>
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("show");
+    });
+  });
+</script>
 
+
+
+  <body>
+    <header>
+      <div class="header-inner">
+        <div class="site-title"><a href="index.html">Chuang Chen</a></div>
+  
+        <!-- ✅ 这里加汉堡按钮 -->
+        <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+  
+        <nav class="main-nav">
+          <a href="project.html">Project</a>
+          <a href="publication.html">Publication</a>
+          <a href="cv.html">CV</a>
+          <a href="about.html">About</a>
+        </nav>
+      </div>
+    </header>
+  
+
+  
   <main class="pub-container">
 
     <!-- 📷 Banner Section -->

@@ -341,3 +341,48 @@ nav a:hover {
         text-align: center;
       }
     }
+
+
+
+    /*phone*/
+    /* 默认汉堡按钮隐藏 */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: #000;
+}
+
+/* 默认导航显示 */
+.main-nav {
+  display: flex;
+}
+
+/* 响应式：移动端显示汉堡菜单 */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .main-nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .main-nav.show {
+    display: flex;
+  }
+
+  .main-nav a {
+    margin: 0.5rem 0;
+  }
+
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
