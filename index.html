@@ -1,58 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Chuang Chen</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
-  <style>
-  .home-banner {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  align-items: center;
-  background-color: #f2f2f2;
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  padding: 0;
-  height: 320px; /* ✅ 灰框高度 */
-  position: relative;
-}
-
-.home-photo {
-  width: 300px;           /* ✅ 更大 */
-  height: 300px;
-  object-fit: cover;
-  margin-left: calc((100vw - 960px) / 2);
-  align-self: end;        /* ✅ 照片贴底 */
-}
-
-.home-slogan {
-  color: #000;
-  font-size: 1.4rem;
-  font-weight: 600;
-  margin-left: 2rem;
-  max-width: 480px;
-}
+  <header>
+    <div class="header-inner">
+      <div class="site-title"><a href="index.html">Chuang Chen</a></div>
+  
+      <!-- 三条横线按钮 -->
+      <button class="menu-toggle" aria-label="Toggle navigation">
+        ☰
+      </button>
+  
+      <!-- 可收缩菜单 -->
+      <nav class="main-nav">
+        <a href="project.html">Project</a>
+        <a href="publication.html">Publication</a>
+        <a href="cv.html">CV</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggle = document.querySelector(".menu-toggle");
+      const nav = document.querySelector(".main-nav");
+  
+      toggle.addEventListener("click", () => {
+        nav.classList.toggle("show");
+      });
+    });
+  </script>
+  
 
 
-
-
-    @media (max-width: 768px) {
-      .home-banner {
-        flex-direction: column;
-        padding: 2rem 0;
-      }
-      .home-photo {
-        margin-left: 0;
-      }
-      .home-slogan {
-        margin: 2rem;
-        text-align: center;
-      }
-    }
-  </style>
-</head>
 <body>
   <header>
     <div class="header-inner">

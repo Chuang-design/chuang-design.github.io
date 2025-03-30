@@ -1,3 +1,4 @@
+
 /* === GLOBAL RESET === */
 html, body {
   margin: 0;
@@ -6,9 +7,8 @@ html, body {
 
 /* Remove any top padding from main container */
 main, .pub-container {
-  padding-top: 0rem !important; /* ✅ 控制统一上边距 */
+  padding-top: 0rem !important;
 }
-
 
 .page-heading {
   font-size: 1.8rem;
@@ -17,14 +17,11 @@ main, .pub-container {
   color: #000;
 }
 
-
-
 .content-wrapper {
   max-width: 960px;
   margin: 0 auto;
   padding: 0 1rem;
 }
-
 
 footer {
   text-align: center;
@@ -42,10 +39,20 @@ footer a:hover {
   text-decoration: underline;
 }
 
+/* Responsive Nav Toggle */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: #000;
+}
+.main-nav {
+  display: flex;
+}
 
-
-
-/* Project */
+/* Header */
 .header-inner {
   max-width: 960px;
   margin: 0 auto;
@@ -74,45 +81,34 @@ nav a:hover {
   text-decoration: underline;
 }
 
-
-
+/* Gallery */
 .gallery-heading {
   margin-top: 3rem;
   margin-bottom: 1rem;
 }
 
-
-
-/* Gallery Layout */
 .gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
 .project-card img {
-  aspect-ratio: 1 / 1; /* 方形图 */
+  aspect-ratio: 1 / 1;
 }
-
 .gallery.project-page {
   grid-template-columns: repeat(2, 1fr);
 }
-
 .gallery.project-page .project-card img {
-  aspect-ratio: 16 / 9; /* 或 4/3，看你喜好 */
+  aspect-ratio: 16 / 9;
 }
 
-
-
 .project-card {
-  max-width: 100%;          /* ✅ 不要强行限制宽度 */
+  max-width: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  /* ❌ 不要设置 margin: auto; */
 }
-
-
 .project-card img {
   width: 100%;
   aspect-ratio: 1 / 1;
@@ -122,36 +118,29 @@ nav a:hover {
   transition: transform 0.3s ease;
   cursor: pointer;
 }
-
 .project-card img:hover {
   transform: scale(1.02);
 }
-
 .black-bar {
   width: 100%;
   height: 2px;
   background-color: #000;
   margin-bottom: 0.4rem;
 }
-
 .project-info {
   text-align: left;
 }
-
 .project-title {
   font-weight: bold;
   font-size: 1rem;
   margin-bottom: 0.2rem;
 }
-
 .project-date {
   font-size: 0.75rem;
   color: #666;
 }
 
-
-
-/* Publication Page */
+/* Publications */
 .pub-container {
   max-width: 960px;
   margin: 0 auto;
@@ -159,19 +148,16 @@ nav a:hover {
   font-size: 0.95rem;
   line-height: 1.6;
 }
-
 .pub-container h1 {
   font-size: 1.8rem;
   margin-bottom: 2rem;
 }
-
 .pub-item {
   display: flex;
   gap: 1.5rem;
   margin-bottom: 2.5rem;
   align-items: flex-start;
 }
-
 .pub-thumbnail {
   flex-shrink: 0;
   width: 100px;
@@ -180,46 +166,38 @@ nav a:hover {
   border-radius: 6px;
   background-color: #eee;
 }
-
 .pub-text {
   flex: 1;
   display: flex;
   flex-direction: column;
 }
-
 .pub-title {
   font-size: 1.05rem;
   font-weight: bold;
   margin-bottom: 0.4rem;
 }
-
 .pub-title a {
   color: #000;
   text-decoration: none;
 }
-
 .pub-title a:hover {
   text-decoration: underline;
 }
-
 .pub-authors {
   font-size: 0.85rem;
   color: #666;
   font-weight: normal;
   margin-bottom: 0.2rem;
 }
-
 .pub-authors strong {
   font-weight: bold;
   color: #444;
 }
-
 .pub-meta {
   font-size: 0.85rem;
   color: #666;
   font-weight: normal;
 }
-
 .pub-note {
   font-size: 0.7rem;
   color: #888;
@@ -227,7 +205,6 @@ nav a:hover {
   margin-bottom: 2.5rem;
   line-height: 1.4;
 }
-
 .award-icon {
   margin-right: 0.4rem;
   font-size: 1rem;
@@ -235,16 +212,12 @@ nav a:hover {
   cursor: help;
 }
 
-
-
-/* About Page */
+/* About */
 .about-wrapper {
   max-width: 960px;
   margin: 0 auto;
   padding: 3rem 1rem;
 }
-
-
 .about-slogan {
   font-size: 1.3rem;
   font-weight: 500;
@@ -253,9 +226,6 @@ nav a:hover {
   text-align: left;
   margin-bottom: 3rem;
 }
-
-
-
 .about-banner {
   width: 100vw;
   background-color: #f2f2f2;
@@ -263,10 +233,9 @@ nav a:hover {
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
-  height: 320px; /* ✅ 固定高度以对齐图片底部 */
-  padding-bottom: 0; /* 确保图片贴底 */
+  height: 320px;
+  padding-bottom: 0;
 }
-
 .about-photo {
   width: 300px;
   height: 300px;
@@ -274,9 +243,6 @@ nav a:hover {
   margin-left: calc((100vw - 960px) / 2);
   border-radius: 0;
 }
-
-
-
 .about-text {
   max-width: 960px;
   margin: 3rem auto 0 auto;
@@ -284,14 +250,118 @@ nav a:hover {
   line-height: 1.7;
   color: #333;
 }
-
 .about-text a {
   color: #000;
   text-decoration: underline;
 }
-
 .about-text a:hover {
   text-decoration: underline;
 }
 
+/* Home (index) */
+.home-banner {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  background-color: #f2f2f2;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  padding: 0;
+  height: 320px;
+  position: relative;
+}
+.home-photo {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  margin-left: calc((100vw - 960px) / 2);
+  align-self: end;
+}
+.home-slogan {
+  color: #000;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-left: 2rem;
+  max-width: 480px;
+}
 
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  .menu-toggle {
+    display: block;
+    margin-top: 1rem;
+  }
+  .main-nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem;
+  }
+  .main-nav.show {
+    display: flex;
+  }
+  .main-nav a {
+    margin: 0.5rem 0;
+  }
+  .pub-container,
+  .about-wrapper,
+  .content-wrapper {
+    padding: 2rem 1rem;
+  }
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem 1rem;
+  }
+  .project-card {
+    max-width: 100%;
+    margin: 0;
+  }
+  .pub-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .pub-thumbnail {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+  .pub-title {
+    font-size: 1rem;
+  }
+  .pub-authors,
+  .pub-meta {
+    font-size: 0.8rem;
+  }
+  .about-banner {
+    flex-direction: column;
+    height: auto;
+    padding: 2rem 1rem;
+    margin-left: 0;
+    width: 100%;
+  }
+  .about-photo {
+    width: 220px;
+    height: 220px;
+    margin: 0 auto 1rem auto;
+  }
+  .about-slogan {
+    text-align: center;
+    font-size: 1.1rem;
+    padding: 0;
+    margin: 1rem auto;
+  }
+  .about-text {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    padding: 0 1rem;
+  }
+  footer {
+    font-size: 0.8rem;
+  }
+}
