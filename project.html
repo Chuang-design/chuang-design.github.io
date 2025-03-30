@@ -1,37 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-  <header>
-    <div class="header-inner">
-      <div class="site-title"><a href="index.html">Chuang Chen</a></div>
-  
-      <!-- 三条横线按钮 -->
-      <button class="menu-toggle" aria-label="Toggle navigation">
-        ☰
-      </button>
-  
-      <!-- 可收缩菜单 -->
-      <nav class="main-nav">
-        <a href="project.html">Project</a>
-        <a href="publication.html">Publication</a>
-        <a href="cv.html">CV</a>
-        <a href="about.html">About</a>
-      </nav>
-    </div>
-  </header>
-
-
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const toggle = document.querySelector(".menu-toggle");
-      const nav = document.querySelector(".main-nav");
-  
-      toggle.addEventListener("click", () => {
-        nav.classList.toggle("show");
-      });
-    });
-  </script>
-
-
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects | Chuang Chen</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+</head>
 <body>
   <header>
     <div class="header-inner">
@@ -104,6 +79,6 @@
   <footer>
     &copy; 2025 Chuang Chen. All Rights Reserved.
   </footer>
-
+  
 </body>
 </html>
