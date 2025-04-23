@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Image Denoising Project | Chuang Chen</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="site-title"><a href="index.html">Chuang Chen</a></div>
+      <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+      <nav class="main-nav">
+        <a href="project.html">Project</a>
+        <a href="publication.html">Publication</a>
+        <a href="cv.html">CV</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="content-wrapper">
+    <h1 class="page-heading">Image Denoising and Restoration</h1>
+
+    <p>
+      Images are widely used carriers of information. However, during acquisition, transmission, or storage, images are often affected by noise. Effectively removing noise and recovering the original visual content is a critical problem in computer vision.
+    </p>
+
+    <h2>Noise Generation</h2>
+    <p>
+      Given an original image <code>I ∈ RH×W×C</code>, we apply a binary noise mask <code>M ∈ RH×W×C</code> (values in {0,1}) to generate a corrupted version <code>X = I ⨀ M</code>.
+    </p>
+    <img src="images/course/fig1.jpg" alt="Noise Generation Example" />
+
+    <h2>Image Restoration Methods</h2>
+
+    <h3>1. Mean Filtering</h3>
+    <p>
+      Mean filtering replaces each pixel value with the average of its neighbors, using a predefined kernel. This helps smooth out noise and create a more consistent region.
+    </p>
+    <ul>
+      <li>Arithmetic Mean Filter</li>
+      <img src="images/course/fig2.jpg" alt="Arithmetic Mean Filter" />
+      <li>Harmonic Mean Filter</li>
+      <img src="images/course/fig3.jpg" alt="Harmonic Mean Filter" />
+      <li>Geometric Mean Filter</li>
+      <img src="images/course/fig4.jpg" alt="Geometric Mean Filter" />
+    </ul>
+
+    <h3>2. Median Filtering</h3>
+    <p>
+      Median filtering is a nonlinear method based on sorting statistics. Each pixel is replaced by the median of its local neighborhood, effectively removing isolated noise while preserving edges.
+    </p>
+    <img src="images/course/fig5.jpg" alt="Median Filtering" />
+
+    <h3>3. K-Nearest Neighbors (KNN) Filtering</h3>
+    <p>
+      This method compares each pixel with its surrounding neighbors (within an N×N window) using Euclidean distance. The pixel is reconstructed from the average of the K most similar neighbors based on color similarity.
+    </p>
+    <img src="images/course/fig6.jpg" alt="KNN Filtering" />
+
+    <h3>4. Deep Image Prior (DIP)</h3>
+    <p>
+      Deep Image Prior is a neural-network-based method that does not require pre-training. By leveraging the network’s natural bias toward structured images, DIP can recover clean content from noisy inputs.
+    </p>
+    <p>
+      In this project, we use an encoder–decoder architecture with downsampling (via convolution) and upsampling (via transposed convolution). Early stopping is used to prevent overfitting to noise.
+    </p>
+    <img src="images/course/fig7.jpg" alt="DIP Network Structure" />
+
+    <h2>Results</h2>
+    <h3>Denoising</h3>
+    <img src="images/ImageRecovery/image8.gif" alt="Denoised Result" />
+    <h3>Image Inpainting</h3>
+    <img src="images/ImageRecovery/image9.gif" alt="Image Inpainting" />
+  </main>
+
+  <footer>
+    &copy; 2025 Chuang Chen · <a href="mailto:chenchuang@zju.edu.cn">chenchuang@zju.edu.cn</a>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggle = document.querySelector(".menu-toggle");
+      const nav = document.querySelector(".main-nav");
+      toggle.addEventListener("click", () => {
+        nav.classList.toggle("show");
+      });
+    });
+  </script>
+</body>
+</html>
