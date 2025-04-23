@@ -128,7 +128,7 @@ nav a:hover {
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 0;
   margin-bottom: 0.4rem;
   transition: transform 0.3s ease;
   cursor: pointer;
@@ -188,7 +188,7 @@ nav a:hover {
   width: 100px;
   height: 100px;
   object-fit: cover;
-  border-radius: 6px;
+  border-radius: 0;
   background-color: #eee;
 }
 
