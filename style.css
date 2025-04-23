@@ -504,21 +504,22 @@ nav a:hover {
 .result-pair {
   display: flex;
   justify-content: center;
-  align-items: center;
   gap: 2rem;
+  flex-wrap: wrap;
   margin: 2rem 0;
-  flex-wrap: wrap; /* ✅ 确保手机端也适配 */
 }
 
 .result-column {
   text-align: center;
+  flex: 1 1 300px; /* 每列宽度约 300px，自适应 */
+  max-width: 400px;
 }
 
 .result-column img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
-  display: block;
-  border-radius: 0;
+  object-fit: contain;
+  border-radius: 0; /* 取消圆角 */
 }
 
 .result-label {
