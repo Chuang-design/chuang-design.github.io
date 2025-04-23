@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HydroSkin | Chuang Chen</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="site-title"><a href="index.html">Chuang Chen</a></div>
+      <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+      <nav class="main-nav">
+        <a href="project.html">Project</a>
+        <a href="publication.html">Publication</a>
+        <a href="cv.html">CV</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="content-wrapper">
+
+    <!-- 主图 -->
+    <div class="project-main-image">
+      <img src="images/HydroSkin-3x2.png" alt="Main Image of HydroSkin" />
+    </div>
+
+    <!-- 信息区域，两栏布局 -->
+    <div class="project-meta-wrapper">
+      <div class="project-meta-left">
+        <h1 class="project-title">HydroSkin</h1>
+        <p class="project-date">May 2024</p>
+      </div>
+      <div class="project-meta-right">
+        <p>
+        Mengyang Li#, <strong>Chuang Chen#</strong>, Xin Tang, Kuangqi Zhu, Yue Yang, Shijian Luo, Cheng Yao, Fangtian Ying, Ye Tao, Guanyun Wang*
+        </p>
+        <p>
+         We introduce HydroSkin, a low-cost, time-efficient, and accessible fabrication technique for on-skin interfaces. By mixing carbon ink with sodium alginate, we developed a low-cost conductive material suitable for hydrographic printing technology. Compared to existing fabrication methods, our approach streamlines the fabrication process and utilizes cost-effective ink without requiring specialized skills. We showcased multiple application scenarios to demonstrate how HydroSkin can enable users to customize the design and quickly fabricate their on-skin interfaces, including a finger game controller, an ear toucher, an arm control slider, and a fatigue monitoring mask.
+        </p>
+        <p>
+          <strong>Publication:</strong> <a href="https://dl.acm.org/doi/10.1145/3613905.3651052" target="_blank">ACM CHI Conference on Human Factors in Computing Systems 2024， LBW</a>
+        </p>
+      </div>
+    </div>
+
+
+  
+  
+
+    <!-- 图组展示（每张独占一行） -->
+    <div class="project-gallery-column">
+      <img src="images/HydroSkin/hydro1.png" alt="HydroSkin Detail 1">
+      <img src="images/HydroSkin/hydro2.png" alt="HydroSkin Detail 2">
+      <img src="images/HydroSkin/hydro3.jpg" alt="HydroSkin Detail 3">
+      <img src="images/HydroSkin/hydro4.png" alt="HydroSkin Detail 4">
+      <img src="images/HydroSkin/hydro5.png" alt="HydroSkin Detail 5">
+      <img src="images/HydroSkin/hydro6.png" alt="HydroSkin Detail 6">
+      <img src="images/HydroSkin/hydro7.png" alt="HydroSkin Detail 7">
+    </div>
+  </main>
+
+  <!-- 页脚 -->
+  <footer>
+    &copy; 2025 Chuang Chen · <a href="mailto:chenchuang@zju.edu.cn">chenchuang@zju.edu.cn</a>
+  </footer>
+
+  <!-- 汉堡控制 -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggle = document.querySelector(".menu-toggle");
+      const nav = document.querySelector(".main-nav");
+      toggle.addEventListener("click", () => {
+        nav.classList.toggle("show");
+      });
+    });
+  </script>
+</body>
+</html>
