@@ -493,3 +493,10 @@ nav a:hover {
     width: 100%;
   }
 }
+
+.content-wrapper img {
+  display: block;
+  margin: 2rem auto;
+  max-width: 100%;
+  height: auto;
+}

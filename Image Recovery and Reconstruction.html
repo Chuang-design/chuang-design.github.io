@@ -6,6 +6,20 @@
   <title>Image Denoising Project | Chuang Chen</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+
+  <!-- MathJax: for beautiful math -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <style>
+    .content-wrapper img {
+      display: block;
+      margin: 2rem auto;
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -25,12 +39,17 @@
     <h1 class="page-heading">Image Denoising and Restoration</h1>
 
     <p>
-      Images are widely used carriers of information. However, during acquisition, transmission, or storage, images are often affected by noise. Effectively removing noise and recovering the original visual content is a critical problem in computer vision.
+      Images are commonly used information carriers. However, they are susceptible to noise during acquisition, transmission, or storage. Removing noise and recovering the original visual content is a crucial task in computer vision.
     </p>
 
     <h2>Noise Generation</h2>
     <p>
-      Given an original image <code>I ∈ RH×W×C</code>, we apply a binary noise mask <code>M ∈ RH×W×C</code> (values in {0,1}) to generate a corrupted version <code>X = I ⨀ M</code>.
+      Given an original image \( I \in \mathbb{R}^{H \times W \times C} \), a binary noise mask \( M \in \{0, 1\}^{H \times W \times C} \) is applied to produce the corrupted image:
+    </p>
+    <p>
+      \[
+        X = I \odot M
+      \]
     </p>
     <img src="images/course/fig1.jpg" alt="Noise Generation Example" />
 
@@ -38,49 +57,53 @@
 
     <h3>1. Mean Filtering</h3>
     <p>
-      Mean filtering replaces each pixel value with the average of its neighbors, using a predefined kernel. This helps smooth out noise and create a more consistent region.
+      Mean filtering replaces each pixel value with the average of its neighboring pixels. It includes the following types:
     </p>
     <ul>
-      <li>Arithmetic Mean Filter</li>
+      <li><strong>Arithmetic Mean Filter</strong></li>
       <img src="images/course/fig2.jpg" alt="Arithmetic Mean Filter" />
-      <li>Harmonic Mean Filter</li>
+
+      <li><strong>Harmonic Mean Filter</strong></li>
       <img src="images/course/fig3.jpg" alt="Harmonic Mean Filter" />
-      <li>Geometric Mean Filter</li>
+
+      <li><strong>Geometric Mean Filter</strong></li>
       <img src="images/course/fig4.jpg" alt="Geometric Mean Filter" />
     </ul>
 
     <h3>2. Median Filtering</h3>
     <p>
-      Median filtering is a nonlinear method based on sorting statistics. Each pixel is replaced by the median of its local neighborhood, effectively removing isolated noise while preserving edges.
+      Median filtering is a nonlinear technique that replaces each pixel with the median value in its local neighborhood. This helps eliminate isolated noisy pixels while preserving image structure.
     </p>
     <img src="images/course/fig5.jpg" alt="Median Filtering" />
 
-    <h3>3. K-Nearest Neighbors (KNN) Filtering</h3>
+    <h3>3. KNN Filtering</h3>
     <p>
-      This method compares each pixel with its surrounding neighbors (within an N×N window) using Euclidean distance. The pixel is reconstructed from the average of the K most similar neighbors based on color similarity.
+      For each pixel, we compare it with surrounding pixels in an \( N \times N \) window using a distance metric (e.g., Euclidean distance). The K nearest neighbors are selected, and their RGB values are averaged to reconstruct the pixel.
     </p>
     <img src="images/course/fig6.jpg" alt="KNN Filtering" />
 
     <h3>4. Deep Image Prior (DIP)</h3>
     <p>
-      Deep Image Prior is a neural-network-based method that does not require pre-training. By leveraging the network’s natural bias toward structured images, DIP can recover clean content from noisy inputs.
+      Deep Image Prior is a neural network method for denoising and restoration that requires no training dataset. It leverages the network's inherent bias to natural image statistics.
     </p>
     <p>
-      In this project, we use an encoder–decoder architecture with downsampling (via convolution) and upsampling (via transposed convolution). Early stopping is used to prevent overfitting to noise.
+      We use an encoder–decoder structure where the image is downsampled (via convolution) and then upsampled (via transposed convolution). Early stopping is applied to prevent the network from fitting the noise.
     </p>
-    <img src="images/course/fig7.jpg" alt="DIP Network Structure" />
+    <img src="images/course/fig7.jpg" alt="DIP Network" />
 
     <h2>Results</h2>
     <h3>Denoising</h3>
     <img src="images/ImageRecovery/image8.gif" alt="Denoised Result" />
-    <h3>Image Inpainting</h3>
-    <img src="images/ImageRecovery/image9.gif" alt="Image Inpainting" />
+
+    <h3>Inpainting</h3>
+    <img src="images/ImageRecovery/image9.gif" alt="Inpainting Result" />
   </main>
 
   <footer>
     &copy; 2025 Chuang Chen · <a href="mailto:chenchuang@zju.edu.cn">chenchuang@zju.edu.cn</a>
   </footer>
 
+  <!-- Mobile nav toggle -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const toggle = document.querySelector(".menu-toggle");
