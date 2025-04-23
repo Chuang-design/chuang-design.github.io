@@ -450,21 +450,19 @@ nav a:hover {
 }
 
 /* 其他图 */
-.project-gallery {
+.project-gallery-column {
   max-width: 960px;
-  margin: 2rem auto 3rem auto;
+  margin: 0 auto;
   padding: 0 1rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
 }
 
-.project-gallery img {
-  width: calc(50% - 0.75rem); /* 两列布局 */
-  height: auto;
-  border-radius: 0;
-  object-fit: cover;
+.project-gallery-column img {
+  width: 100%;
+  margin: 1.5rem 0;
+  border-radius: 6px;
+  display: block;
 }
+
 
 /* 手机端单列 */
 @media (max-width: 768px) {
