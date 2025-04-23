@@ -51,7 +51,7 @@
         X = I \odot M
       \]
     </p>
-    <img src="images/course/fig1.jpg" alt="Noise Generation Example" />
+    <img src="images/ImageRecovery/image_1.png" alt="Noise Generation Example" />
 
     <h2>Image Restoration Methods</h2>
 
@@ -61,26 +61,26 @@
     </p>
     <ul>
       <li><strong>Arithmetic Mean Filter</strong></li>
-      <img src="images/course/fig2.jpg" alt="Arithmetic Mean Filter" />
+      <img src="images/ImageRecovery/image_2.png" alt="Arithmetic Mean Filter" />
 
       <li><strong>Harmonic Mean Filter</strong></li>
-      <img src="images/course/fig3.jpg" alt="Harmonic Mean Filter" />
+      <img src="images/ImageRecovery/image_3.png" alt="Harmonic Mean Filter" />
 
       <li><strong>Geometric Mean Filter</strong></li>
-      <img src="images/course/fig4.jpg" alt="Geometric Mean Filter" />
+      <img src="images/ImageRecovery/image_4.png" alt="Geometric Mean Filter" />
     </ul>
 
     <h3>2. Median Filtering</h3>
     <p>
       Median filtering is a nonlinear technique that replaces each pixel with the median value in its local neighborhood. This helps eliminate isolated noisy pixels while preserving image structure.
     </p>
-    <img src="images/course/fig5.jpg" alt="Median Filtering" />
+    <img src="images/ImageRecovery/image_5.png" alt="Median Filtering" />
 
     <h3>3. KNN Filtering</h3>
     <p>
       For each pixel, we compare it with surrounding pixels in an \( N \times N \) window using a distance metric (e.g., Euclidean distance). The K nearest neighbors are selected, and their RGB values are averaged to reconstruct the pixel.
     </p>
-    <img src="images/course/fig6.jpg" alt="KNN Filtering" />
+    <img src="images/ImageRecovery/image_6.png" alt="KNN Filtering" />
 
     <h3>4. Deep Image Prior (DIP)</h3>
     <p>
@@ -89,14 +89,33 @@
     <p>
       We use an encoder–decoder structure where the image is downsampled (via convolution) and then upsampled (via transposed convolution). Early stopping is applied to prevent the network from fitting the noise.
     </p>
-    <img src="images/course/fig7.jpg" alt="DIP Network" />
+    <img src="images/ImageRecovery/image_7.png" alt="DIP Network" />
 
-    <h2>Results</h2>
     <h3>Denoising</h3>
-    <img src="images/ImageRecovery/image8.gif" alt="Denoised Result" />
+<div class="result-pair">
+  <div class="result-column">
+    <img src="images/ImageRecovery/image_10.png" alt="Noisy Image">
+    <p class="result-label">Noise</p>
+  </div>
+  <div class="result-column">
+    <img src="images/ImageRecovery/image8.gif" alt="Recovered Image">
+    <p class="result-label">Recovery</p>
+  </div>
+</div>
+
+    
 
     <h3>Inpainting</h3>
-    <img src="images/ImageRecovery/image9.gif" alt="Inpainting Result" />
+    <div class="result-pair">
+        <div class="result-column">
+          <img src="images/ImageRecovery/image_11.png" alt="Noisy Image">
+          <p class="result-label">Noise</p>
+        </div>
+        <div class="result-column">
+          <img src="images/ImageRecovery/image9.gif" alt="Recovered Image">
+          <p class="result-label">Recovery</p>
+        </div>
+      </div>
   </main>
 
   <footer>

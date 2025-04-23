@@ -500,3 +500,29 @@ nav a:hover {
   max-width: 100%;
   height: auto;
 }
+
+.result-pair {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin: 2rem 0;
+  flex-wrap: wrap; /* ✅ 确保手机端也适配 */
+}
+
+.result-column {
+  text-align: center;
+}
+
+.result-column img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0;
+}
+
+.result-label {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 0.5rem;
+}
