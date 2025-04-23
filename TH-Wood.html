@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TH-Wood | Chuang Chen</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="site-title"><a href="index.html">Chuang Chen</a></div>
+      <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+      <nav class="main-nav">
+        <a href="project.html">Project</a>
+        <a href="publication.html">Publication</a>
+        <a href="cv.html">CV</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="content-wrapper">
+
+    <!-- 主图 -->
+    <div class="project-main-image">
+      <img src="images/TH-Wood-3x2.png" alt="Main Image of TH-Wood" />
+    </div>
+
+    <!-- 信息区域，两栏布局 -->
+    <div class="project-meta-wrapper">
+      <div class="project-meta-left">
+        <h1 class="project-title">TH-Wood</h1>
+        <p class="project-date">April 2025</p>
+      </div>
+      <div class="project-meta-right">
+        <p>
+            Guanyun Wang, <strong>Chuang Chen</strong>, Xiao Jin, Yulu Chen, Yangweizhe Zheng, Qianzi Zhen, Yang Zhang, Jiaji Li, Yue Yang, Ye Tao, Shijian Luo, Lingyun Sun*
+        </p>
+        <p>
+        Wood has become increasingly applied in shape-changing interfaces for its eco-friendly and smart responsive properties, while its applications face challenges as it remains primarily driven by humidity. We propose TH-Wood, a biodegradable actuator system composed of wood veneer and microbial polymers, driven by both temperature and humidity, and capable of functioning in complex outdoor environments. This dual-factor-driven approach enhances the sensing and response channels, allowing for more sophisticated coordinating control methods. To assist in designing and utilizing the system more effectively, we developed a structure library inspired by dynamic plant forms, conducted extensive technical evaluations, created an educational platform accessible to users, and provided a design tool for deformation adjustments and behavior previews. Finally, several ecological applications demonstrate the potential of TH-Wood to significantly enhance human interaction with natural environments and expand the boundaries of human-nature relationships.
+        </p>
+        <p>
+          <strong>Publication:</strong> <a href="https://programs.sigchi.org/chi/2025/program/content/188289" target="_blank">ACM CHI Conference on Human Factors in Computing Systems 2025， Full Paper (Honorable Mention)</a>
+        </p>
+      </div>
+    </div>
+
+
+  
+  
+
+    <!-- 图组展示（每张独占一行） -->
+    <div class="project-gallery-column">
+    
+    </div>
+  </main>
+
+  <!-- 页脚 -->
+  <footer>
+    &copy; 2025 Chuang Chen · <a href="mailto:chenchuang@zju.edu.cn">chenchuang@zju.edu.cn</a>
+  </footer>
+
+  <!-- 汉堡控制 -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggle = document.querySelector(".menu-toggle");
+      const nav = document.querySelector(".main-nav");
+      toggle.addEventListener("click", () => {
+        nav.classList.toggle("show");
+      });
+    });
+  </script>
+</body>
+</html>
