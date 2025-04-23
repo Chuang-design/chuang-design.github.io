@@ -416,41 +416,57 @@ nav a:hover {
 /*project page*/
 .project-main-image img {
   width: 100%;
-  max-width: 720px;
-  margin: 2rem auto;
+  max-width: 960px;
+  margin: 2rem auto 1.5rem auto;
   display: block;
-  border-radius: 8px;
+  border-radius: 0; /* ✅ 无圆角 */
 }
 
-.project-brief {
-  font-size: 1.05rem;
+/* 两栏排布 */
+.project-meta-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.project-meta-left .project-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.project-meta-left .project-date {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* 右栏内容 */
+.project-meta-right p {
+  font-size: 0.95rem;
   line-height: 1.6;
   color: #333;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
+/* 其他图 */
 .project-gallery {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 1.5rem;
-  flex-wrap: wrap;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .project-gallery img {
-  width: calc(50% - 0.75rem);
-  border-radius: 6px;
+  width: 100%;
+  height: auto;
+  border-radius: 0; /* ✅ 无圆角 */
   object-fit: cover;
 }
 
-.project-description {
-  font-size: 0.95rem;
-  line-height: 1.7;
-  color: #333;
-  margin-bottom: 2rem;
-}
 
-.project-meta {
-  font-size: 0.9rem;
-  color: #555;
-  margin-bottom: 4rem;
+@media (max-width: 768px) {
+  .project-meta-wrapper {
+    grid-template-columns: 1fr;
+  }
 }
