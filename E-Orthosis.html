@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>E-Orthosis | Chuang Chen</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="site-title"><a href="index.html">Chuang Chen</a></div>
+      <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+      <nav class="main-nav">
+        <a href="project.html">Project</a>
+        <a href="publication.html">Publication</a>
+        <a href="cv.html">CV</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="content-wrapper">
+    <!-- 项目主图 -->
+    <div class="project-main-image">
+      <img src="images/E-Orthosis/E-Orthosis_1(4).jpg" alt="E-Orthosis main image" />
+    </div>
+
+    <!-- 项目简介 -->
+    <h1 class="page-heading">E-Orthosis</h1>
+    <p class="project-brief">
+      E-Orthosis explores augmenting off-the-shelf orthoses with embedded electronics to enable interactive, data-driven rehabilitation. This project combines fabrication, sensing, and wearable computing.
+    </p>
+
+    <!-- 辅助图片展示 -->
+    <div class="project-gallery">
+      <img src="images/E-Orthosis/E-Orthosis_10.jpg" alt="Prototype 1">
+      <img src="images/E-Orthosis/E-Orthosis_3.jpg" alt="User Test">
+    </div>
+
+    <!-- 项目详细介绍 -->
+    <div class="project-description">
+      <p>
+        This project focuses on the integration of pressure sensors, IMUs, and BLE modules into existing orthotic braces, enabling fine-grained monitoring of joint movement and compliance tracking in rehabilitation.
+      </p>
+      <p>
+        We developed a series of prototypes and tested them with real users in clinical environments. Results show enhanced feedback and engagement compared to traditional rehabilitation routines.
+      </p>
+    </div>
+
+    <!-- 项目发表/奖项 -->
+    <div class="project-meta">
+      <p><strong>Publication:</strong> ACM CHI 2023, Full Paper</p>
+      <p><strong>Award:</strong> Best Paper Honorable Mention</p>
+    </div>
+  </main>
+
+  <!-- 页脚 -->
+  <footer>
+    &copy; 2025 Chuang Chen · <a href="mailto:chenchuang@zju.edu.cn">chenchuang@zju.edu.cn</a>
+  </footer>
+
+  <!-- 汉堡控制 -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggle = document.querySelector(".menu-toggle");
+      const nav = document.querySelector(".main-nav");
+      toggle.addEventListener("click", () => {
+        nav.classList.toggle("show");
+      });
+    });
+  </script>
+</body>
+</html>
