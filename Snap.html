@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SnapInflatable | Chuang Chen</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="site-title"><a href="index.html">Chuang Chen</a></div>
+      <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+      <nav class="main-nav">
+        <a href="project.html">Project</a>
+        <a href="publication.html">Publication</a>
+        <a href="cv.html">CV</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="content-wrapper">
+
+    <!-- 主图 -->
+    <div class="project-main-image">
+      <img src="images/Snap/SnapInflatables_17.jpg" alt="Main Image of SnapInflatable" />
+    </div>
+
+    <!-- 信息区域，两栏布局 -->
+    <div class="project-meta-wrapper">
+      <div class="project-meta-left">
+        <h1 class="project-title">SnapInflatable</h1>
+        <p class="project-date">May 2024</p>
+      </div>
+      <div class="project-meta-right">
+        <p>
+            Yue Yang, Lei Ren, <strong>Chuang Chen</strong>, Bin Hu, Zhuoyi Zhang, Xinyan Li, Yanchen Shen, Kuangqi Zhu, Junzhe Ji, Yuyang Zhang, Yongbo Ni, Jiayi Wu, Qi Wang, Jiang Wu, Lingyun Sun, Ye Tao, Guanyun Wang*
+        </p>
+        <p>
+            Snap-through instability, like the rapid closure of the Venus flytrap, is gaining attention in robotics and HCI. It offers rapid shape reconfiguration, self-sensing, actuation, and enhanced haptic feedback. However, conventional snap-through structures face limitations in fabrication efficiency, scale, and tunability. We introduce SnapInflatables, enabling safe, multi-scale interaction with adjustable sensitivity and force reactions, utilizing the snap-through instability of inflatables. We designed six types of heat-sealing structures enabling versatile snap-through passive motion of inflatables with diverse reaction and trigger directions. A block structure enables ultra-sensitive states for rapid energy release and force amplification. The motion range is facilitated by geometry parameters, while force feedback properties are tunable through internal pressure settings. Based on experiments, we developed a design tool for creating desired inflatable snap-through shapes and motions, offering previews and inflation simulations. Example applications, including a self-locking medical stretcher, interactive animals, a bounce button, and a large-scale light demonstrate enhanced passive interaction with inflatables.
+        </p>
+        <p>
+          <strong>Publication:</strong> <a href="https://dl.acm.org/doi/10.1145/3613904.3642933" target="_blank">ACM CHI Conference on Human Factors in Computing Systems 2024， Full Paper</a>
+        </p>
+      </div>
+    </div>
+
+ <!-- 视频展示 -->
+<div class="video-wrapper">
+    <iframe 
+      src="https://www.youtube.com/embed/PVnISHcFpbw" 
+      title="SnapInflatable Demo Video"
+      frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+      allowfullscreen>
+    </iframe>
+  </div>
+  
+
+    <!-- 图组展示（每张独占一行） -->
+    <div class="project-gallery-column">
+      <img src="images/Snap/SnapInflatables_2.gif" alt="SnapInflatable Detail 1">
+      <img src="images/Snap/SnapInflatables_3.gif" alt="SnapInflatable Detail 2">
+      <img src="images/Snap/SnapInflatables_4.gif" alt="SnapInflatable Detail 3">
+      <img src="images/Snap/SnapInflatables_5.jpg" alt="SnapInflatable Detail 4">
+      <img src="images/Snap/SnapInflatables_6.jpg" alt="SnapInflatable Detail 5">
+      <img src="images/Snap/SnapInflatables_7.jpg" alt="SnapInflatable Detail 6">
+      <img src="images/Snap/SnapInflatables_8.jpg" alt="SnapInflatable Detail 7">
+      <img src="images/Snap/SnapInflatables_10.jpg" alt="SnapInflatable Detail 8">
+      <img src="images/Snap/SnapInflatables_11.jpg" alt="SnapInflatable Detail 9">
+      <img src="images/Snap/SnapInflatables_12.jpg" alt="SnapInflatable Detail 10">
+      <img src="images/Snap/SnapInflatables_20.jpg" alt="SnapInflatable Detail 11">
+
+    </div>
+  </main>
+
+  <!-- 页脚 -->
+  <footer>
+    &copy; 2025 Chuang Chen · <a href="mailto:chenchuang@zju.edu.cn">chenchuang@zju.edu.cn</a>
+  </footer>
+
+  <!-- 汉堡控制 -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggle = document.querySelector(".menu-toggle");
+      const nav = document.querySelector(".main-nav");
+      toggle.addEventListener("click", () => {
+        nav.classList.toggle("show");
+      });
+    });
+  </script>
+</body>
+</html>
