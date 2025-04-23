@@ -451,22 +451,24 @@ nav a:hover {
 
 /* 其他图 */
 .project-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  max-width: 960px;
+  margin: 2rem auto 3rem auto;
+  padding: 0 1rem;
+  display: flex;
+  flex-wrap: wrap;
   gap: 1.5rem;
-  margin-bottom: 3rem;
 }
 
 .project-gallery img {
-  width: 100%;
+  width: calc(50% - 0.75rem); /* 两列布局 */
   height: auto;
-  border-radius: 0; /* ✅ 无圆角 */
+  border-radius: 0;
   object-fit: cover;
 }
 
-
+/* 手机端单列 */
 @media (max-width: 768px) {
-  .project-meta-wrapper {
-    grid-template-columns: 1fr;
+  .project-gallery img {
+    width: 100%;
   }
 }
