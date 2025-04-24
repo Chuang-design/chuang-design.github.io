@@ -69,15 +69,16 @@
 
     <h2>Challenges & Solutions</h2>
     <ul>
-      <li><strong>Weak load capacity:</strong> The linear stage could not support the second stage on top — replaced with orthogonal support rods.</li>
-      <li><strong>Frame bending:</strong> Acrylic rods lacked stiffness — switched to steel rods to ensure synchronized movement.</li>
-      <li><strong>Motor stalls:</strong> High torque demand caused stalls — fine-tuned PID parameters to reduce speed and increase torque.</li>
-     <ul>
-     <ul>    
-      <li><strong>Object detection:</strong> YOLOv5 had limited accuracy — used OpenCV edge detection and filtering for improved performance.</li>
-      <ul>   
-        <img src="images/Charge/Charge_2.png" alt="Detection Improvement" />
-      <li><strong>Occlusion issue:</strong> Charger became untrackable when beneath the phone — implemented a pre-positioning step followed by open-loop final approach.</li>
+      <li><strong>Weak load capacity:</strong> The linear stage couldn't support another stage stacked on top — we added orthogonal steel support rods.</li>
+      <li><strong>Frame bending:</strong> Acrylic rods lacked strength — we switched to steel rods for better load bearing.</li>
+      <li><strong>Motor stalls:</strong> Motors jammed under high torque — PID parameters were optimized to reduce speed and increase torque.</li>
+      <li><strong>Object detection:</strong> YOLOv5 had limited accuracy — we adopted OpenCV with edge detection and filtering for improved recognition.</li>
+    </ul>
+
+    <img src="images/Charge/Charge_2.png" alt="Detection Improvement" />
+
+    <ul>
+      <li><strong>Occlusion problem:</strong> The phone blocked the charger from being recognized — we added a pre-positioning phase, followed by open-loop movement for final placement.</li>
     </ul>
 
     <img src="images/Charge/Charge_3.png" alt="Occlusion Handling" />
@@ -86,10 +87,11 @@
 
     <div class="result-pair">
       <div class="result-column">
-       
-        <p class="result-label">charging in Sleep Mode,Tracking While Screen O,Tracking After Phone Movement</p>
         <img src="images/Charge/charge_4.gif" alt="Tracking Movement" />
-    </div>
+        <p class="result-label">
+          The system supports <strong>charging during sleep mode</strong>, continues <strong>tracking while the phone screen is on</strong>, and successfully <strong>follows the phone even after it is moved</strong>.
+        </p>
+      </div>
     </div>
   </main>
 
