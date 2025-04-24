@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Auto-Tracking Wireless Charger | Chuang Chen</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    .content-wrapper img {
+      display: block;
+      margin: 2rem auto;
+      max-width: 100%;
+      height: auto;
+    }
+    .result-pair {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin: 2rem 0;
+    }
+    .result-column {
+      text-align: center;
+      flex: 1 1 300px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .result-column img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      border-radius: 0;
+    }
+    .result-label {
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: 0.5rem;
+    }
+    .half-width-img {
+      display: block;
+      width: 60%;
+      max-width: 100%;
+      margin: 2rem auto;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="site-title"><a href="index.html">Chuang Chen</a></div>
+      <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+      <nav class="main-nav">
+        <a href="project.html">Project</a>
+        <a href="publication.html">Publication</a>
+        <a href="cv.html">CV</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="content-wrapper">
+    <h1 class="page-heading">Auto-Tracking Wireless Charging Platform</h1>
+
+    <p>This project enables a 6.3 cm diameter wireless charging pad to automatically locate a mobile phone placed above a 45 cm × 45 cm acrylic panel and move beneath it to initiate charging. The movement is achieved via two-axis linear stages that control the x-y position of the charger beneath the surface.</p>
+
+    <p>A camera captures real-time images which are processed via OpenCV to extract the positions of the phone and charging pad. A PID algorithm calculates control inputs by comparing current and target positions, driving stepper motors to adjust the track motion accordingly.</p>
+
+    <img src="images/Charge/charge_1.png" alt="Device Overview" />
+
+    <h2>Control Strategy: Incremental PID</h2>
+    <p>To reduce computational load, the incremental PID algorithm replaces accumulated error (integral term) with error differences over the last three steps. This avoids large memory usage while maintaining stability. The control output \( \Delta u(k) \) is based on recent changes rather than the full position deviation.</p>
+
+    <h2>Challenges & Solutions</h2>
+    <ul>
+      <li><strong>Weak load capacity:</strong> The linear stage could not support the second stage on top — replaced with orthogonal support rods.</li>
+      <li><strong>Frame bending:</strong> Acrylic rods lacked stiffness — switched to steel rods to ensure synchronized movement.</li>
+      <li><strong>Motor stalls:</strong> High torque demand caused stalls — fine-tuned PID parameters to reduce speed and increase torque.</li>
+      <li><strong>Object detection:</strong> YOLOv5 had limited accuracy — used OpenCV edge detection and filtering for improved performance.</li>
+    </ul>
+
+    <img src="images/Charge/Charge_2.png" alt="Detection Improvement" />
+
+    <li><strong>Occlusion issue:</strong> Charger became untrackable when beneath the phone — implemented a pre-positioning step followed by open-loop final approach.</li>
+    <img src="images/Charge/Charge_3.png" alt="Occlusion Handling" class="half-width-img" />
+
+    <h2>Demo Results</h2>
+    <p>The system supports charging during sleep mode, continues tracking while the phone screen is on, and successfully follows the phone even after it is moved.<p>
+    <div class="result-pair">
+      <div class="result-column">
+        <img src="images/Charge/charge_4.gif" alt="Tracking Movement" />
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Chuang Chen · <a href="mailto:chenchuang@zju.edu.cn">chenchuang@zju.edu.cn</a>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggle = document.querySelector(".menu-toggle");
+      const nav = document.querySelector(".main-nav");
+      toggle.addEventListener("click", () => {
+        nav.classList.toggle("show");
+      });
+    });
+  </script>
+</body>
+</html>
