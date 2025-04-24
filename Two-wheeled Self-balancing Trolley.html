@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Self-Balancing Car with CMC | Chuang Chen</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+  <style>
+    .content-wrapper img {
+      display: block;
+      margin: 2rem auto;
+      max-width: 100%;
+      height: auto;
+    }
+    .caption {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: -1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="site-title"><a href="index.html">Chuang Chen</a></div>
+      <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+      <nav class="main-nav">
+        <a href="project.html">Project</a>
+        <a href="publication.html">Publication</a>
+        <a href="cv.html">CV</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="content-wrapper">
+    <h1 class="page-heading">Self-Balancing Robot Controlled by CMC Chip</h1>
+
+    <p>
+      The CMC (Control Module on Chip) is a highly integrated control chip that combines logic control, motion control, I/O, communication interfaces, and memory. It can be used as a standalone controller or expanded via bus interfaces for larger multi-point systems. CMC simplifies hardware development through standard circuitry, enabling users to quickly build their own custom controllers.
+    </p>
+
+    <p>
+      This project demonstrates a self-balancing two-wheeled robot based on the CMC controller. The robot maintains balance even after light disturbances, leveraging the chip’s motion control capabilities.
+    </p>
+
+    <h2>Control Principle</h2>
+    <p>
+      The two-wheeled robot is modeled as a dynamic balancing system, where the control objective is to regulate the motor speeds and directions to keep the vehicle upright. Using negative feedback control, the robot detects tilt in the rolling direction and drives the wheels in a way that counteracts the lean. This approach allows the system to stay balanced in a single degree of freedom.
+    </p>
+
+    <img src="images/Blance/Blance_1.gif" alt="Self-Balancing Car Demo" />
+    <p class="caption">Figure 1: Self-balancing robot prototype using the CMC controller</p>
+  </main>
+
+  <footer>
+    &copy; 2025 Chuang Chen · <a href="mailto:chenchuang@zju.edu.cn">chenchuang@zju.edu.cn</a>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggle = document.querySelector(".menu-toggle");
+      const nav = document.querySelector(".main-nav");
+      toggle.addEventListener("click", () => {
+        nav.classList.toggle("show");
+      });
+    });
+  </script>
+</body>
+</html>
