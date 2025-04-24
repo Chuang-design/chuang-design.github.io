@@ -11,7 +11,16 @@
   <header>
     <div class="header-inner">
       <div class="site-title"><a href="index.html">Chuang Chen</a></div>
-      <nav>
+  
+      <!-- ✅ 汉堡图标（推荐用 SVG） -->
+      <button class="menu-toggle" aria-label="Toggle navigation">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M3 6h18M3 12h18M3 18h18" stroke="black" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+  
+      <!-- ✅ 导航菜单 -->
+      <nav class="main-nav">
         <a href="project.html">Project</a>
         <a href="publication.html">Publication</a>
         <a href="cv.html">CV</a>
@@ -103,6 +112,16 @@
   <footer>
     &copy; 2025 Chuang Chen. All Rights Reserved.
   </footer>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggle = document.querySelector(".menu-toggle");
+      const nav = document.querySelector(".main-nav");
+      toggle.addEventListener("click", () => {
+        nav.classList.toggle("show");
+      });
+    });
+  </script>
   
 </body>
 </html>
