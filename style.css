@@ -4,9 +4,11 @@ html, body {
   padding: 0;
 }
 
+/* Remove any top padding from main container */
 main, .pub-container {
-  padding-top: 0rem !important;
+  padding-top: 0rem !important; /* ✅ 控制统一上边距 */
 }
+
 
 .page-heading {
   font-size: 1.8rem;
@@ -15,11 +17,14 @@ main, .pub-container {
   color: #000;
 }
 
+
+
 .content-wrapper {
   max-width: 960px;
   margin: 0 auto;
   padding: 0 1rem;
 }
+
 
 footer {
   text-align: center;
@@ -29,22 +34,34 @@ footer {
   margin-top: 4rem;
   border-top: 1px solid #eee;
 }
-
 footer a {
   color: #888;
   text-decoration: none;
 }
-
 footer a:hover {
   text-decoration: underline;
 }
 
-/* HEADER */
+
+
+
+/* Project */
+
+.sub-heading {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 3rem;
+  margin-bottom: 1.2rem;
+  color: #000;
+}
+
+
+
 .header-inner {
   max-width: 960px;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* ✅ 左右分布 */
   align-items: center;
   padding: 1.5rem 1rem;
 }
@@ -68,37 +85,44 @@ nav a:hover {
   text-decoration: underline;
 }
 
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 1.6rem;
-  cursor: pointer;
-  color: #000;
-}
 
-/* GALLERY */
+
 .gallery-heading {
   margin-top: 3rem;
   margin-bottom: 1rem;
 }
 
+
+
+/* Gallery Layout */
 .gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
+}
+.project-card img {
+  aspect-ratio: 1 / 1; /* 方形图 */
 }
 
 .gallery.project-page {
   grid-template-columns: repeat(2, 1fr);
 }
 
+.gallery.project-page .project-card img {
+  aspect-ratio: 16 / 9; /* 或 4/3，看你喜好 */
+}
+
+
+
 .project-card {
+  max-width: 100%;          /* ✅ 不要强行限制宽度 */
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  /* ❌ 不要设置 margin: auto; */
 }
+
 
 .project-card img {
   width: 100%;
@@ -107,7 +131,7 @@ nav a:hover {
   display: block;
   margin: 0;
   padding: 0;
-  line-height: 0;
+  line-height: 0;  /* ✅ 清除空白间隙的根本原因 */
   border-radius: 0;
 }
 
@@ -115,13 +139,27 @@ nav a:hover {
   transform: scale(1.02);
 }
 
+
+
 .black-bar {
   width: 100%;
   height: 2px;
   background-color: #000;
-  margin: 0;
+  margin: 0;           /* ✅ 去除下方间距 */
   padding: 0;
 }
+
+.project-card img {
+  display: block;      /* ✅ 防止 inline 元素产生的空隙 */
+  margin: 0;           /* ✅ 去除上下 margin */
+  padding: 0;
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+  border-radius: 0;
+}
+
+
 
 .project-info {
   text-align: left;
@@ -138,7 +176,9 @@ nav a:hover {
   color: #666;
 }
 
-/* PUBLICATION */
+
+
+/* Publication Page */
 .pub-container {
   max-width: 960px;
   margin: 0 auto;
@@ -155,7 +195,7 @@ nav a:hover {
 .pub-item {
   display: flex;
   gap: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1 rem;
   align-items: center;
 }
 
@@ -192,16 +232,19 @@ nav a:hover {
 .pub-authors {
   font-size: 0.85rem;
   color: #666;
+  font-weight: normal;
   margin-bottom: 0.2rem;
 }
 
 .pub-authors strong {
+  font-weight: bold;
   color: #444;
 }
 
 .pub-meta {
   font-size: 0.85rem;
   color: #666;
+  font-weight: normal;
 }
 
 .pub-note {
@@ -219,12 +262,15 @@ nav a:hover {
   cursor: help;
 }
 
-/* ABOUT PAGE */
+
+
+/* About Page */
 .about-wrapper {
   max-width: 960px;
   margin: 0 auto;
   padding: 3rem 1rem;
 }
+
 
 .about-slogan {
   font-size: 1.3rem;
@@ -235,6 +281,8 @@ nav a:hover {
   margin-bottom: 3rem;
 }
 
+
+
 .about-banner {
   width: 100vw;
   background-color: #f2f2f2;
@@ -242,8 +290,8 @@ nav a:hover {
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
-  height: 320px;
-  padding-bottom: 0;
+  height: 320px; /* ✅ 固定高度以对齐图片底部 */
+  padding-bottom: 0; /* 确保图片贴底 */
 }
 
 .about-photo {
@@ -253,6 +301,8 @@ nav a:hover {
   margin-left: calc((100vw - 960px) / 2);
   border-radius: 0;
 }
+
+
 
 .about-text {
   max-width: 960px;
@@ -269,4 +319,264 @@ nav a:hover {
 
 .about-text a:hover {
   text-decoration: underline;
+}
+
+
+/*index*/
+
+.home-banner {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  background-color: #f2f2f2;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  padding: 0;
+  height: 320px; /* ✅ 灰框高度 */
+  position: relative;
+}
+
+.home-photo {
+  width: 300px;           /* ✅ 更大 */
+  height: 300px;
+  object-fit: cover;
+  margin-left: calc((100vw - 960px) / 2);
+  align-self: end;        /* ✅ 照片贴底 */
+}
+
+.home-slogan {
+  color: #000;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-left: 2rem;
+  max-width: 480px;
+}
+
+
+
+
+    @media (max-width: 768px) {
+      .home-banner {
+        flex-direction: column;
+        padding: 2rem 0;
+      }
+      .home-photo {
+        margin-left: 0;
+      }
+      .home-slogan {
+        margin: 2rem;
+        text-align: center;
+      }
+    }
+
+
+
+
+/*project page*/
+.project-main-image img {
+  width: 100%;
+  max-width: 960px;
+  margin: 2rem auto 1.5rem auto;
+  display: block;
+  border-radius: 0; /* ✅ 无圆角 */
+}
+
+/* 两栏排布 */
+.project-meta-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.project-meta-left .project-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.project-meta-left .project-date {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* 右栏内容 */
+.project-meta-right p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+/* 其他图 */
+.project-gallery-column {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.project-gallery-column img {
+  width: 100%;
+  margin: 1.5rem 0;
+  border-radius: 0; /* 去掉圆角 */
+  display: block;
+}
+
+
+.video-wrapper {
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.video-inner {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.video-inner iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+
+/* 手机端单列 */
+@media (max-width: 768px) {
+  .project-gallery img {
+    width: 100%;
+  }
+}
+
+.content-wrapper img {
+  display: block;
+  margin: 2rem auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.result-pair {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
+
+.result-column {
+  text-align: center;
+  flex: 1 1 300px; /* 每列宽度约 300px，自适应 */
+  max-width: 400px;
+}
+
+.result-column img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 0; /* 取消圆角 */
+}
+
+.result-label {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 0.5rem;
+}
+
+/* 默认隐藏汉堡按钮 */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: #000;
+}
+
+
+@media (max-width: 768px) {
+  /* ✅ 汉堡菜单点开后作为浮动面板居上覆盖 */
+  .menu-toggle {
+    display: block;
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    color: #000;
+  }
+  .main-nav {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 64px;
+    left: 0;
+    width: 100vw;
+    max-height: 250px; /* ✅ 不要太长 */
+    overflow-y: auto;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    padding: 1rem;
+    z-index: 1000;
+  }
+
+  .main-nav.show {
+    display: flex;
+  }
+
+  .main-nav a {
+    font-size: 1.1rem;
+    margin: 0.75rem 0;
+  }
+
+  .header-inner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* ✅ index 页面：灰色背景和图片、排版修复 */
+  .home-banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f2f2f2;
+    width: 100vw;
+    padding: 2rem 1rem 0 1rem;
+    margin: 0;
+  }
+
+  .home-photo {
+    width: 80vw;
+    height: auto;
+    max-width: 280px;
+    object-fit: cover;
+    margin-bottom: 0;
+  }
+
+  .home-slogan {
+    font-size: 1.2rem;
+    font-style: italic;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+    color: #666;
+    padding: 0 1rem;
+  }
+
+  /* ✅ Recent Projects：单列排布，全宽 */
+  .gallery {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .project-card img {
+    aspect-ratio: 1 / 1;
+  }
 }
