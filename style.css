@@ -126,12 +126,13 @@ nav a:hover {
 
 .project-card img {
   width: 100%;
-  aspect-ratio: 1 / 1;
   object-fit: cover;
+  aspect-ratio: 1 / 1;
+  display: block;
+  margin: 0;
+  padding: 0;
+  line-height: 0;  /* ✅ 清除空白间隙的根本原因 */
   border-radius: 0;
-  margin-bottom: 0;
-  transition: transform 0.3s ease;
-  cursor: pointer;
 }
 
 .project-card img:hover {
