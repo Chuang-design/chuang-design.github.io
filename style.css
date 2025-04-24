@@ -667,3 +667,39 @@ nav a:hover {
     margin-bottom: 1rem;
   }
 }
+
+@media (max-width: 768px) {
+  .gallery.project-page {
+    grid-template-columns: 1fr; /* 单列显示 */
+    gap: 2rem;
+  }
+
+  .project-card {
+    align-items: flex-start;
+  }
+
+  .project-card img {
+    aspect-ratio: 16 / 9; /* 保持 3x2 宽高比 */
+    object-fit: cover;
+    width: 100%;
+    margin: 0;
+  }
+
+  .black-bar {
+    margin-bottom: 0.3rem;
+  }
+
+  .project-info {
+    padding: 0 0.5rem;
+    width: 100%;
+  }
+
+  .project-title {
+    font-size: 1rem;
+    margin-bottom: 0.1rem;
+  }
+
+  .project-date {
+    font-size: 0.8rem;
+  }
+}
