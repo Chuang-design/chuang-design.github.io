@@ -234,3 +234,77 @@ nav a:hover {
     font-size: 1.1rem;
   }
 }
+
+@media (max-width: 768px) {
+
+  /* ✅ 汉堡菜单居右，点击后覆盖浮出 */
+  .menu-toggle {
+    display: block;
+    z-index: 1001;
+  }
+
+  .main-nav {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 64px;
+    left: 0;
+    width: 100vw;
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+
+  .main-nav.show {
+    display: flex;
+  }
+
+  .main-nav a {
+    margin: 1rem 0;
+    font-size: 1.1rem;
+  }
+
+  .header-inner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* ✅ index 页面：横向灰色块 + 图片底部贴底 + slogan 移出灰块 */
+  .home-banner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+
+  .home-photo {
+    width: 80vw;
+    height: auto;
+    max-width: 300px;
+    object-fit: cover;
+    margin: 0 auto;
+    margin-bottom: 0;
+  }
+
+  .home-slogan {
+    margin-top: 1.5rem;
+    padding: 0 1rem;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #666;
+    text-align: center;
+  }
+
+  /* ✅ recent project 卡片全屏一列 */
+  .gallery {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .project-card img {
+    aspect-ratio: 1 / 1;
+  }
+
+}
