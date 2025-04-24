@@ -138,17 +138,26 @@ nav a:hover {
   transform: scale(1.02);
 }
 
+
+
 .black-bar {
   width: 100%;
   height: 2px;
   background-color: #000;
-  margin-bottom: 0; /* 紧贴图片 */
+  margin: 0;           /* ✅ 去除下方间距 */
+  padding: 0;
 }
 
 .project-card img {
-  margin-top: 0; /* 防止图片和黑线之间出现默认 margin */
-  margin-bottom: 0.4rem; /* 保持图片和文字间距 */
+  display: block;      /* ✅ 防止 inline 元素产生的空隙 */
+  margin: 0;           /* ✅ 去除上下 margin */
+  padding: 0;
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+  border-radius: 0;
 }
+
 
 
 .project-info {
