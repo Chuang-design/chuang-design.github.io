@@ -2,13 +2,17 @@
 html, body {
   margin: 0;
   padding: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
 }
 
-/* Remove any top padding from main container */
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
 main, .pub-container {
-  padding-top: 0rem !important; /* ✅ 控制统一上边距 */
+  padding-top: 0rem;
 }
-
 
 .page-heading {
   font-size: 1.8rem;
@@ -17,14 +21,11 @@ main, .pub-container {
   color: #000;
 }
 
-
-
 .content-wrapper {
   max-width: 960px;
   margin: 0 auto;
   padding: 0 1rem;
 }
-
 
 footer {
   text-align: center;
@@ -34,34 +35,22 @@ footer {
   margin-top: 4rem;
   border-top: 1px solid #eee;
 }
+
 footer a {
   color: #888;
   text-decoration: none;
 }
+
 footer a:hover {
   text-decoration: underline;
 }
 
-
-
-
-/* Project */
-
-.sub-heading {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-top: 3rem;
-  margin-bottom: 1.2rem;
-  color: #000;
-}
-
-
-
+/* HEADER */
 .header-inner {
   max-width: 960px;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between; /* ✅ 左右分布 */
+  justify-content: space-between;
   align-items: center;
   padding: 1.5rem 1rem;
 }
@@ -85,44 +74,78 @@ nav a:hover {
   text-decoration: underline;
 }
 
-
-
-.gallery-heading {
-  margin-top: 3rem;
-  margin-bottom: 1rem;
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: #000;
 }
 
+.main-nav {
+  display: flex;
+  gap: 1.5rem;
+}
 
+/* RESPONSIVE NAV */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    z-index: 1001;
+  }
 
-/* Gallery Layout */
+  .main-nav {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 64px;
+    left: 0;
+    width: 100vw;
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+
+  .main-nav.show {
+    display: flex;
+  }
+
+  .main-nav a {
+    margin: 1rem 0;
+    font-size: 1.1rem;
+  }
+
+  .header-inner {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+/* GALLERY SECTION */
 .gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-}
-.project-card img {
-  aspect-ratio: 1 / 1; /* 方形图 */
 }
 
 .gallery.project-page {
   grid-template-columns: repeat(2, 1fr);
 }
 
-.gallery.project-page .project-card img {
-  aspect-ratio: 16 / 9; /* 或 4/3，看你喜好 */
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
-
-
 .project-card {
-  max-width: 100%;          /* ✅ 不要强行限制宽度 */
-  width: 100%;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  /* ❌ 不要设置 margin: auto; */
 }
-
 
 .project-card img {
   width: 100%;
@@ -131,7 +154,6 @@ nav a:hover {
   border-radius: 0;
   margin-bottom: 0.4rem;
   transition: transform 0.3s ease;
-  cursor: pointer;
 }
 
 .project-card img:hover {
@@ -160,172 +182,23 @@ nav a:hover {
   color: #666;
 }
 
-
-
-/* Publication Page */
-.pub-container {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 3rem 1rem;
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
-.pub-container h1 {
-  font-size: 1.8rem;
-  margin-bottom: 2rem;
-}
-
-.pub-item {
+/* HOMEPAGE BANNER */
+.home-banner {
   display: flex;
-  gap: 1.5rem;
-  margin-bottom: 2.5rem;
-  align-items: flex-start;
-}
-
-.pub-thumbnail {
-  flex-shrink: 0;
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 0;
-  background-color: #eee;
-}
-
-.pub-text {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.pub-title {
-  font-size: 1.05rem;
-  font-weight: bold;
-  margin-bottom: 0.4rem;
-}
-
-.pub-title a {
-  color: #000;
-  text-decoration: none;
-}
-
-.pub-title a:hover {
-  text-decoration: underline;
-}
-
-.pub-authors {
-  font-size: 0.85rem;
-  color: #666;
-  font-weight: normal;
-  margin-bottom: 0.2rem;
-}
-
-.pub-authors strong {
-  font-weight: bold;
-  color: #444;
-}
-
-.pub-meta {
-  font-size: 0.85rem;
-  color: #666;
-  font-weight: normal;
-}
-
-.pub-note {
-  font-size: 0.7rem;
-  color: #888;
-  margin-top: -1rem;
-  margin-bottom: 2.5rem;
-  line-height: 1.4;
-}
-
-.award-icon {
-  margin-right: 0.4rem;
-  font-size: 1rem;
-  vertical-align: middle;
-  cursor: help;
-}
-
-
-
-/* About Page */
-.about-wrapper {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 3rem 1rem;
-}
-
-
-.about-slogan {
-  font-size: 1.3rem;
-  font-weight: 500;
-  font-style: italic;
-  color: #666;
-  text-align: left;
-  margin-bottom: 3rem;
-}
-
-
-
-.about-banner {
-  width: 100vw;
-  background-color: #f2f2f2;
-  margin-left: calc(-50vw + 50%);
-  display: flex;
-  justify-content: flex-start;
+  flex-wrap: wrap;
   align-items: flex-end;
-  height: 320px; /* ✅ 固定高度以对齐图片底部 */
-  padding-bottom: 0; /* 确保图片贴底 */
+  justify-content: flex-start;
+  background-color: #f2f2f2;
+  padding: 2rem 1rem;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
 }
 
-.about-photo {
+.home-photo {
   width: 300px;
   height: 300px;
   object-fit: cover;
   margin-left: calc((100vw - 960px) / 2);
-  border-radius: 0;
-}
-
-
-
-.about-text {
-  max-width: 960px;
-  margin: 3rem auto 0 auto;
-  font-size: 0.95rem;
-  line-height: 1.7;
-  color: #333;
-}
-
-.about-text a {
-  color: #000;
-  text-decoration: underline;
-}
-
-.about-text a:hover {
-  text-decoration: underline;
-}
-
-
-/*index*/
-
-.home-banner {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  align-items: center;
-  background-color: #f2f2f2;
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  padding: 0;
-  height: 320px; /* ✅ 灰框高度 */
-  position: relative;
-}
-
-.home-photo {
-  width: 300px;           /* ✅ 更大 */
-  height: 300px;
-  object-fit: cover;
-  margin-left: calc((100vw - 960px) / 2);
-  align-self: end;        /* ✅ 照片贴底 */
 }
 
 .home-slogan {
@@ -334,171 +207,40 @@ nav a:hover {
   font-weight: 600;
   margin-left: 2rem;
   max-width: 480px;
+  align-self: center;
 }
 
-
-
-
-    @media (max-width: 768px) {
-      .home-banner {
-        flex-direction: column;
-        padding: 2rem 0;
-      }
-      .home-photo {
-        margin-left: 0;
-      }
-      .home-slogan {
-        margin: 2rem;
-        text-align: center;
-      }
-    }
-
-
-
-    /*phone*/
- /* 默认汉堡按钮隐藏 */
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 1.6rem;
-  cursor: pointer;
-  color: #000;
-}
-
-/* 默认导航显示为横向 */
-.main-nav {
-  display: flex;
-  gap: 1.5rem;
-}
-
-/* ✅ 手机端：菜单全宽展开，左对齐 */
 @media (max-width: 768px) {
-  .header-inner {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  .main-nav {
-    display: none;
+  .home-banner {
     flex-direction: column;
-    width: 100%;             /* ✅ 占满整行 */
-    margin-top: 1rem;
-    padding-left: 1rem;      /* ✅ 内容左对齐但留边距 */
-    background: white;       /* ✅ 背景白色 */
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05); /* ✅ 轻微阴影 */
+    align-items: center;
+    padding: 2rem 1rem;
+    margin-left: 0;
   }
 
-  .main-nav.show {
-    display: flex;
+  .home-photo {
+    width: 80vw;
+    height: auto;
+    max-width: 300px;
+    margin: 0 auto 1rem auto;
   }
 
-  .main-nav a {
-    margin: 0.5rem 0;
-    text-decoration: none;
-    color: #000;
-    font-weight: 500;
-    font-size: 1rem;
-  }
-
-  .main-nav a:hover {
-    text-decoration: underline;
+  .home-slogan {
+    margin: 1rem 0 0 0;
+    padding: 0 1rem;
+    text-align: center;
   }
 }
 
-
-
-/*project page*/
-.project-main-image img {
-  width: 100%;
-  max-width: 960px;
-  margin: 2rem auto 1.5rem auto;
-  display: block;
-  border-radius: 0; /* ✅ 无圆角 */
-}
-
-/* 两栏排布 */
-.project-meta-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 2rem;
-  margin-bottom: 2.5rem;
-}
-
-.project-meta-left .project-title {
-  font-size: 1.8rem;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-}
-
-.project-meta-left .project-date {
-  font-size: 1rem;
-  color: #666;
-}
-
-/* 右栏内容 */
-.project-meta-right p {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #333;
-  margin-bottom: 1rem;
-}
-
-/* 其他图 */
-.project-gallery-column {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-.project-gallery-column img {
-  width: 100%;
-  margin: 1.5rem 0;
-  border-radius: 0; /* 去掉圆角 */
-  display: block;
-}
-
-
-.video-wrapper {
-  max-width: 960px;
-  margin: 2rem auto;
-  padding: 0 1rem;
-}
-
-.video-inner {
-  position: relative;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio */
-  height: 0;
-  overflow: hidden;
-}
-
+/* IMAGE/VIDEO LAYOUT */
+.project-main-image img,
+.project-gallery-column img,
+.video-wrapper,
 .video-inner iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
-  border: none;
-}
-
-
-/* 手机端单列 */
-@media (max-width: 768px) {
-  .project-gallery img {
-    width: 100%;
-  }
-}
-
-.content-wrapper img {
-  display: block;
+  max-width: 960px;
   margin: 2rem auto;
-  max-width: 100%;
-  height: auto;
+  display: block;
 }
 
 .result-pair {
@@ -511,7 +253,7 @@ nav a:hover {
 
 .result-column {
   text-align: center;
-  flex: 1 1 300px; /* 每列宽度约 300px，自适应 */
+  flex: 1 1 300px;
   max-width: 400px;
 }
 
@@ -519,7 +261,7 @@ nav a:hover {
   width: 100%;
   height: auto;
   object-fit: contain;
-  border-radius: 0; /* 取消圆角 */
+  border-radius: 0;
 }
 
 .result-label {
