@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Auto-Tracking Wireless Charger | Chuang Chen</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    .content-wrapper img {
+      display: block;
+      margin: 2rem auto;
+      max-width: 100%;
+      height: auto;
+    }
+    .result-pair {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin: 2rem 0;
+    }
+    .result-column {
+      text-align: center;
+      flex: 1 1 300px;
+      max-width: 400px;
+    }
+    .result-column img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      border-radius: 0;
+    }
+    .result-label {
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="site-title"><a href="index.html">Chuang Chen</a></div>
+      <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+      <nav class="main-nav">
+        <a href="project.html">Project</a>
+        <a href="publication.html">Publication</a>
+        <a href="cv.html">CV</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="content-wrapper">
+    <h1 class="page-heading">Auto-Tracking Wireless Charging Platform</h1>
+
+    <p>This project enables a 6.3 cm diameter wireless charging pad to automatically locate a mobile phone placed above a 45 cm × 45 cm acrylic panel and move beneath it to initiate charging. The movement is achieved via two-axis linear stages that control the x-y position of the charger beneath the surface.</p>
+
+    <p>A camera captures real-time images which are processed via OpenCV to extract the positions of the phone and charging pad. A PID algorithm calculates control inputs by comparing current and target positions, driving stepper motors to adjust the track motion accordingly.</p>
+
+    <img src="images/wireless/image1.jpg" alt="Device Overview" />
+
+    <h2>System Architecture</h2>
+    <img src="images/wireless/image2.jpg" alt="System Block Diagram" />
+
+    <h2>Control Strategy: Incremental PID</h2>
+    <p>To reduce computational load, the incremental PID algorithm replaces accumulated error (integral term) with error differences over the last three steps. This avoids large memory usage while maintaining stability. The control output \( \Delta u(k) \) is based on recent changes rather than the full position deviation.</p>
+    <img src="images/wireless/image3.jpg" alt="PID Control" />
+
+    <h2>Image Detection via OpenCV</h2>
+    <img src="images/wireless/image4.jpg" alt="OpenCV Workflow" />
+
+    <h2>Challenges & Solutions</h2>
+    <ul>
+      <li><strong>Weak load capacity:</strong> The linear stage could not support the second stage on top — replaced with orthogonal support rods.</li>
+      <li><strong>Frame bending:</strong> Acrylic rods lacked stiffness — switched to steel rods to ensure synchronized movement.</li>
+      <li><strong>Motor stalls:</strong> High torque demand caused stalls — fine-tuned PID parameters to reduce speed and increase torque.</li>
+      <li><strong>Object detection:</strong> YOLOv5 had limited accuracy — used OpenCV edge detection and filtering for improved performance.</li>
+      <li><strong>Occlusion issue:</strong> Charger became untrackable when beneath the phone — implemented a pre-positioning step followed by open-loop final approach.</li>
+    </ul>
+    <img src="images/wireless/image5.jpg" alt="Detection Improvement" />
+    <img src="images/wireless/image6.jpg" alt="Occlusion Handling" />
+
+    <h2>Demo Results</h2>
+    <div class="result-pair">
+      <div class="result-column">
+        <img src="images/wireless/image7.jpg" alt="Charging Success" />
+        <p class="result-label">Charging in Sleep Mode</p>
+      </div>
+      <div class="result-column">
+        <img src="images/wireless/image8.jpg" alt="Tracking While On" />
+        <p class="result-label">Tracking While Screen On</p>
+      </div>
+    </div>
+
+    <div class="result-pair">
+      <div class="result-column">
+        <img src="images/wireless/image9.jpg" alt="Tracking Movement" />
+        <p class="result-label">Tracking After Phone Movement</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Chuang Chen · <a href="mailto:chenchuang@zju.edu.cn">chenchuang@zju.edu.cn</a>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggle = document.querySelector(".menu-toggle");
+      const nav = document.querySelector(".main-nav");
+      toggle.addEventListener("click", () => {
+        nav.classList.toggle("show");
+      });
+    });
+  </script>
+</body>
+</html>
