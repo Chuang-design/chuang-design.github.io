@@ -26,7 +26,8 @@
     .result-column {
       text-align: center;
       flex: 1 1 300px;
-      max-width: 400px;
+      max-width: 960px;
+      margin: 0 auto;
     }
     .result-column img {
       width: 100%;
@@ -38,6 +39,12 @@
       font-size: 0.9rem;
       color: #555;
       margin-top: 0.5rem;
+    }
+    .half-width-img {
+      display: block;
+      width: 60%;
+      max-width: 100%;
+      margin: 2rem auto;
     }
   </style>
 </head>
@@ -69,28 +76,22 @@
 
     <h2>Challenges & Solutions</h2>
     <ul>
-      <li><strong>Weak load capacity:</strong> The linear stage couldn't support another stage stacked on top — we added orthogonal steel support rods.</li>
-      <li><strong>Frame bending:</strong> Acrylic rods lacked strength — we switched to steel rods for better load bearing.</li>
-      <li><strong>Motor stalls:</strong> Motors jammed under high torque — PID parameters were optimized to reduce speed and increase torque.</li>
-      <li><strong>Object detection:</strong> YOLOv5 had limited accuracy — we adopted OpenCV with edge detection and filtering for improved recognition.</li>
+      <li><strong>Weak load capacity:</strong> The linear stage could not support the second stage on top — replaced with orthogonal support rods.</li>
+      <li><strong>Frame bending:</strong> Acrylic rods lacked stiffness — switched to steel rods to ensure synchronized movement.</li>
+      <li><strong>Motor stalls:</strong> High torque demand caused stalls — fine-tuned PID parameters to reduce speed and increase torque.</li>
+      <li><strong>Object detection:</strong> YOLOv5 had limited accuracy — used OpenCV edge detection and filtering for improved performance.</li>
     </ul>
 
     <img src="images/Charge/Charge_2.png" alt="Detection Improvement" />
 
-    <ul>
-      <li><strong>Occlusion problem:</strong> The phone blocked the charger from being recognized — we added a pre-positioning phase, followed by open-loop movement for final placement.</li>
-    </ul>
-
-    <img src="images/Charge/Charge_3.png" alt="Occlusion Handling" />
+    <li><strong>Occlusion issue:</strong> Charger became untrackable when beneath the phone — implemented a pre-positioning step followed by open-loop final approach.</li>
+    <img src="images/Charge/Charge_3.png" alt="Occlusion Handling" class="half-width-img" />
 
     <h2>Demo Results</h2>
-
     <div class="result-pair">
       <div class="result-column">
         <img src="images/Charge/charge_4.gif" alt="Tracking Movement" />
-        <p class="result-label">
-          The system supports <strong>charging during sleep mode</strong>, continues <strong>tracking while the phone screen is on</strong>, and successfully <strong>follows the phone even after it is moved</strong>.
-        </p>
+        <p class="result-label">Charging during sleep · Tracking with screen on · Follow-up charging after phone movement</p>
       </div>
     </div>
   </main>
