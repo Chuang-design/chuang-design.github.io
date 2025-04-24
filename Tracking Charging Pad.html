@@ -69,25 +69,6 @@
 
     <p>A camera captures real-time images which are processed via OpenCV to extract the positions of the phone and charging pad. A PID algorithm calculates control inputs by comparing current and target positions, driving stepper motors to adjust the track motion accordingly.</p>
 
-    <img src="images/Charge/charge_1.png" alt="Device Overview" />
-
-    <h2>Control Strategy: Incremental PID</h2>
-    <p>To reduce computational load, the incremental PID algorithm replaces accumulated error (integral term) with error differences over the last three steps. This avoids large memory usage while maintaining stability. The control output \( \Delta u(k) \) is based on recent changes rather than the full position deviation.</p>
-
-    <h2>Challenges & Solutions</h2>
-    <ul>
-      <li><strong>Weak load capacity:</strong> The linear stage could not support the second stage on top — replaced with orthogonal support rods.</li>
-      <li><strong>Frame bending:</strong> Acrylic rods lacked stiffness — switched to steel rods to ensure synchronized movement.</li>
-      <li><strong>Motor stalls:</strong> High torque demand caused stalls — fine-tuned PID parameters to reduce speed and increase torque.</li>
-      <li><strong>Object detection:</strong> YOLOv5 had limited accuracy — used OpenCV edge detection and filtering for improved performance.</li>
-    </ul>
-
-    <img src="images/Charge/Charge_2.png" alt="Detection Improvement" />
-
-    <li><strong>Occlusion issue:</strong> Charger became untrackable when beneath the phone — implemented a pre-positioning step followed by open-loop final approach.</li>
-    <img src="images/Charge/Charge_3.png" alt="Occlusion Handling" class="half-width-img" />
-
-    <h2>Demo Results</h2>
     <p>The system supports charging during sleep mode, continues tracking while the phone screen is on, and successfully follows the phone even after it is moved.<p>
     <div class="result-pair">
       <div class="result-column">
