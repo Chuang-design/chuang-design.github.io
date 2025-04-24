@@ -7,44 +7,27 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
 </head>
+<body>
 
+  <header>
+    <div class="header-inner">
+      <div class="site-title"><a href="index.html">Chuang Chen</a></div>
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const toggle = document.querySelector(".menu-toggle");
-    const nav = document.querySelector(".main-nav");
+      <!-- 汉堡按钮 -->
+      <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
 
-    toggle.addEventListener("click", () => {
-      nav.classList.toggle("show");
-    });
-  });
-</script>
+      <nav class="main-nav">
+        <a href="project.html">Project</a>
+        <a href="publication.html">Publication</a>
+        <a href="cv.html">CV</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
 
-
-
-
-  <body>
-    <header>
-      <div class="header-inner">
-        <div class="site-title"><a href="index.html">Chuang Chen</a></div>
-  
-        <!-- ✅ 这里加汉堡按钮 -->
-        <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
-  
-        <nav class="main-nav">
-          <a href="project.html">Project</a>
-          <a href="publication.html">Publication</a>
-          <a href="cv.html">CV</a>
-          <a href="about.html">About</a>
-        </nav>
-      </div>
-    </header>
-  
-
-  
   <main class="pub-container">
 
-    <!-- 📷 Banner Section -->
+    <!-- Banner Section -->
     <div class="home-banner">
       <img src="images/profile.jpg" alt="Chuang Chen" class="home-photo" />
       <div class="home-slogan">
@@ -52,7 +35,7 @@
       </div>
     </div>
 
-    <!-- 🧠 About Summary -->
+    <!-- About Summary -->
     <div class="content-wrapper" style="margin-top: 3rem;">
       <h2 class="gallery-heading">About</h2>
       <p>
@@ -61,7 +44,7 @@
       <p><a href="about.html">Read full bio →</a></p>
     </div>
 
-    <!-- 🧪 Projects Preview -->
+    <!-- Recent Projects -->
     <div class="content-wrapper" style="margin-top: 3rem;">
       <h2 class="gallery-heading">Recent Projects</h2>
       <section class="gallery">
@@ -95,7 +78,7 @@
       <p style="margin-top: 1rem;"><a href="project.html">View all projects →</a></p>
     </div>
 
-    <!-- 📝 Publications -->
+    <!-- Publications -->
     <div class="content-wrapper" style="margin-top: 3rem;">
       <h2 class="gallery-heading">Selected Publications</h2>
 
@@ -132,11 +115,20 @@
     </div>
   </main>
 
-
   <footer>
     &copy; 2025 Chuang Chen. All Rights Reserved.
   </footer>
+
+  <!-- 移动端汉堡菜单 JS -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggle = document.querySelector(".menu-toggle");
+      const nav = document.querySelector(".main-nav");
+      toggle.addEventListener("click", () => {
+        nav.classList.toggle("show");
+      });
+    });
+  </script>
+
 </body>
 </html>
-
-
