@@ -50,7 +50,7 @@
     </p>
 
     <img src="images/attack/attack_1.png" alt="Concept Overview" />
-    <p class="caption">Figure 1: Real-world adversarial patch test</p>
+
 
     <h2>YOLOv2 Object Detection</h2>
     <p>
@@ -58,7 +58,6 @@
     </p>
 
     <img src="images/attack/attack_2.png" alt="YOLOv2 Detection" />
-    <p class="caption">Figure 2: YOLOv2 grid-based object detection</p>
 
     <h2>Patch Optimization Strategy</h2>
     <p>
@@ -82,7 +81,6 @@
     </p>
 
     <img src="images/attack/attack_3.png" alt="Patch Optimization Workflow" />
-    <p class="caption">Figure 3: Adversarial patch training pipeline</p>
 
     <h2>Our Improvements</h2>
     <p>
@@ -98,7 +96,6 @@ loss = det_loss + nps_loss + max(tv_loss, 0.1) + mean(adv_patch)
     </pre>
 
     <img src="images/attack/attack_4.gif" alt="Black Patch Result" />
-    <p class="caption">Figure 4: Near-black patch hiding a person</p>
 
     <h3>2. Misclassification</h3>
     <p>
@@ -110,10 +107,10 @@ return max(confs_for_class) - max(attack_class)
     </pre>
 
     <img src="images/attack/attack_5.gif" alt="Bear Misclassification" />
-    <p class="caption">Figure 5: Misclassified as a bear</p>
+    <p class="caption">Misclassified as a bear</p>
 
     <img src="images/attack/attack_6.gif" alt="Umbrella Misclassification" />
-    <p class="caption">Figure 6: Misclassified as an umbrella</p>
+    <p class="caption">Misclassified as an umbrella</p>
   </main>
 
   <footer>
