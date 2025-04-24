@@ -173,34 +173,34 @@ nav a:hover {
   }
 }
 
-/*index*/
-
+/* === Home Banner Section === */
 .home-banner {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  align-items: center;
-  background-color: #f2f2f2;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
-  padding: 0;
-  height: 320px; /* ✅ 灰框高度 */
-  position: relative;
+  background-color: #f2f2f2;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding: 2rem 1rem;
+  height: 320px;
 }
 
 .home-photo {
-  width: 300px;           /* ✅ 更大 */
+  width: 300px;
   height: 300px;
   object-fit: cover;
+  border-radius: 0;
   margin-left: calc((100vw - 960px) / 2);
-  align-self: end;        /* ✅ 照片贴底 */
 }
 
 .home-slogan {
-  color: #000;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  text-align: center;
   font-size: 1.4rem;
   font-weight: 600;
-  margin-left: 2rem;
-  max-width: 480px;
+  max-width: 600px;
+  color: #000;
 }
 
 @media (max-width: 768px) {
@@ -212,30 +212,17 @@ nav a:hover {
     height: auto;
   }
 
-  .home-banner-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
   .home-photo {
     width: 80vw;
     max-width: 280px;
     height: auto;
-    margin-bottom: 1rem;
+    margin: 0;
   }
 
   .home-slogan {
-    position: static;
-    transform: none;
-    margin: 1rem auto;
+    margin: 2rem auto 1rem;
     padding: 0 1rem;
     font-size: 1.2rem;
     max-width: 90%;
-    bottom: auto;
   }
 }
-
-
-
-
-
