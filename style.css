@@ -586,3 +586,37 @@ nav a:hover {
     
   }
 }
+
+@media (max-width: 768px) {
+  .about-banner {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: auto;
+    padding: 2rem 1rem 1rem 1rem;
+  }
+
+  .about-photo {
+    width: 80vw;
+    height: auto;
+    max-width: 260px;
+    margin-left: 0;
+    margin-bottom: 0;
+  }
+
+  .about-slogan {
+    text-align: center;
+    font-size: 1.1rem;
+    padding: 0 1rem;
+    margin: 1.5rem 0 2rem 0;
+  }
+
+  .about-wrapper {
+    padding: 2rem 1rem;
+  }
+
+  .about-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+}
