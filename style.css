@@ -173,45 +173,34 @@ nav a:hover {
   }
 }
 
-/* === Home Banner Section === */
-.home-banner {
-  width: 100%;
-  background-color: #f2f2f2;
-  display: flex;
-  justify-content: center; /* 改为居中布局 */
-  align-items: flex-end;
-  padding: 2rem 0; /* 移除左右padding */
-  height: 320px;
-  box-sizing: border-box;
-}
+/*index*/
 
-.home-banner-container {
-  width: 100%;
-  max-width: 960px; /* 与正文宽度一致 */
-  display: flex;
-  justify-content: space-between; /* 照片和slogan分布在两侧 */
-  align-items: flex-end;
+.home-banner {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  background-color: #f2f2f2;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  padding: 0;
+  height: 320px; /* ✅ 灰框高度 */
   position: relative;
-  height: 100%;
 }
 
 .home-photo {
-  width: 300px;
+  width: 300px;           /* ✅ 更大 */
   height: 300px;
   object-fit: cover;
-  border-radius: 0;
+  margin-left: calc((100vw - 960px) / 2);
+  align-self: end;        /* ✅ 照片贴底 */
 }
 
 .home-slogan {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
+  color: #000;
   font-size: 1.4rem;
   font-weight: 600;
-  max-width: 600px;
-  color: #000;
-  bottom: 2rem; /* 与照片底部对齐 */
+  margin-left: 2rem;
+  max-width: 480px;
 }
 
 @media (max-width: 768px) {
@@ -245,3 +234,8 @@ nav a:hover {
     bottom: auto;
   }
 }
+
+
+
+
+
