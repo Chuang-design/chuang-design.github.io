@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Adversarial Patch Against YOLO | Chuang Chen</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    .content-wrapper img {
+      display: block;
+      margin: 2rem auto;
+      max-width: 100%;
+      height: auto;
+    }
+    .caption {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: -1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="site-title"><a href="index.html">Chuang Chen</a></div>
+      <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+      <nav class="main-nav">
+        <a href="project.html">Project</a>
+        <a href="publication.html">Publication</a>
+        <a href="cv.html">CV</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="content-wrapper">
+    <h1 class="page-heading">Adversarial Patch Attacks Against Person Detection</h1>
+
+    <p>
+      With the advancement of deep learning, adversarial attacks on neural networks have attracted growing attention. Surprisingly, small changes to a neural network's input can lead to drastically different outputs.
+    </p>
+
+    <p>
+      In the paper <em>"Fooling Automated Surveillance Cameras: Adversarial Patches to Attack Person Detection"</em>, the authors successfully crafted adversarial patches that hide people from YOLO detectors—even in dynamic real-world environments.
+    </p>
+
+    <img src="images/attack/attack_1.png" alt="Concept Overview" />
+    <p class="caption">Figure 1: Real-world adversarial patch test</p>
+
+    <h2>YOLOv2 Object Detection</h2>
+    <p>
+      YOLOv2 divides an image into a grid and applies a convolutional neural network (CNN) to predict bounding boxes and class probabilities. Each anchor within the grid outputs an objectness score, bounding box coordinates, and class predictions. The final detections are determined based on objectness confidence and box overlap.
+    </p>
+
+    <img src="images/attack/attack_2.png" alt="YOLOv2 Detection" />
+    <p class="caption">Figure 2: YOLOv2 grid-based object detection</p>
+
+    <h2>Patch Optimization Strategy</h2>
+    <p>
+      The goal is to generate a printable adversarial patch that deceives YOLOv2 in real-world scenarios using the Inria dataset. The loss function combines:
+      <ul>
+        <li>Non-printability score (NPS)</li>
+        <li>Total variation loss (TV)</li>
+        <li>Object/class confidence suppression loss</li>
+      </ul>
+    </p>
+
+    <p>Three strategies for obj/class loss minimization:</p>
+    <ul>
+      <li>Minimize objectness only</li>
+      <li>Minimize class=person confidence only</li>
+      <li>Minimize both objectness and class=person simultaneously</li>
+    </ul>
+
+    <p>
+      The algorithm begins by randomly initializing a patch, applies transformations (rotation, noise, scaling), overlays it on images, and forwards them through YOLOv2. Based on the resulting scores and losses, the patch is iteratively optimized.
+    </p>
+
+    <img src="images/attack/attack_3.png" alt="Patch Optimization Workflow" />
+    <p class="caption">Figure 3: Adversarial patch training pipeline</p>
+
+    <h2>Our Improvements</h2>
+    <p>
+      Building upon this work, we made two key improvements:
+    </p>
+
+    <h3>1. Stealthy Obfuscation</h3>
+    <p>
+      A near-black patch can successfully suppress person detection.
+    </p>
+    <pre>
+loss = det_loss + nps_loss + max(tv_loss, 0.1) + mean(adv_patch)
+    </pre>
+
+    <img src="images/attack/attack_4.gif" alt="Black Patch Result" />
+    <p class="caption">Figure 4: Near-black patch hiding a person</p>
+
+    <h3>2. Misclassification</h3>
+    <p>
+      Instead of hiding people, we aim to misclassify them as unrelated objects such as a bear or an umbrella.
+    </p>
+    <pre>
+attack_class = normal_confs[:, 25, :]  # class 25 → umbrella
+return max(confs_for_class) - max(attack_class)
+    </pre>
+
+    <img src="images/attack/attack_5.gif" alt="Bear Misclassification" />
+    <p class="caption">Figure 5: Misclassified as a bear</p>
+
+    <img src="images/attack/attack_6.gif" alt="Umbrella Misclassification" />
+    <p class="caption">Figure 6: Misclassified as an umbrella</p>
+  </main>
+
+  <footer>
+    &copy; 2025 Chuang Chen · <a href="mailto:chenchuang@zju.edu.cn">chenchuang@zju.edu.cn</a>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggle = document.querySelector(".menu-toggle");
+      const nav = document.querySelector(".main-nav");
+      toggle.addEventListener("click", () => {
+        nav.classList.toggle("show");
+      });
+    });
+  </script>
+</body>
+</html>
