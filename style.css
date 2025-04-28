@@ -363,15 +363,27 @@ nav a:hover {
 
 @media (max-width: 768px) {
   .home-banner {
+    display: flex;
     flex-direction: column;
-    padding: 2rem 0;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: #f2f2f2;
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+    height: auto;
+    min-height: 320px; /* ✅ 确保灰色块高度一致 */
+    position: relative;
   }
 
   .home-photo {
-    width: 100%;  /* 确保手机端照片宽度一致 */
-    height: auto;  /* 高度自动调整 */
+    width: 80vw;
+    height: auto;
+    max-width: 260px;
+    object-fit: cover;
+    margin: 0;
+    align-self: center;
   }
-}
 
 
 
