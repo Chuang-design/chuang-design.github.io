@@ -361,19 +361,17 @@ nav a:hover {
 
 
 
-    @media (max-width: 768px) {
-      .home-banner {
-        flex-direction: column;
-        padding: 2rem 0;
-      }
-      .home-photo {
-        margin-left: 0;
-      }
-      .home-slogan {
-        margin: 2rem;
-        text-align: center;
-      }
-    }
+@media (max-width: 768px) {
+  .home-banner {
+    flex-direction: column;
+    padding: 2rem 0;
+  }
+
+  .home-photo {
+    width: 100%;  /* 确保手机端照片宽度一致 */
+    height: auto;  /* 高度自动调整 */
+  }
+}
 
 
 
