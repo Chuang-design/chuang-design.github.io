@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Adversarial Patch Against YOLO | Chuang Chen</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="icon" href="../../assets/favicon.ico" type="image/x-icon" />
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async
     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -27,13 +27,13 @@
 <body>
   <header>
     <div class="header-inner">
-      <div class="site-title"><a href="index.html">Chuang Chen</a></div>
+      <div class="site-title"><a href="../../index.html">Chuang Chen</a></div>
       <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
       <nav class="main-nav">
-        <a href="project.html">Project</a>
-        <a href="publication.html">Publication</a>
-        <a href="cv.html">CV</a>
-        <a href="about.html">About</a>
+        <a href="../../project.html">Project</a>
+        <a href="../../publication.html">Publication</a>
+        <a href="../../cv.html">CV</a>
+        <a href="../../about.html">About</a>
       </nav>
     </div>
   </header>
@@ -49,7 +49,7 @@
       In the paper <em>"Fooling Automated Surveillance Cameras: Adversarial Patches to Attack Person Detection"</em>, the authors successfully crafted adversarial patches that hide people from YOLO detectors—even in dynamic real-world environments.
     </p>
 
-    <img src="images/attack/attack_1.png" alt="Concept Overview" />
+    <img src="images/attack_1.png" alt="Concept Overview" />
 
 
     <h2>YOLOv2 Object Detection</h2>
@@ -57,7 +57,7 @@
       YOLOv2 divides an image into a grid and applies a convolutional neural network (CNN) to predict bounding boxes and class probabilities. Each anchor within the grid outputs an objectness score, bounding box coordinates, and class predictions. The final detections are determined based on objectness confidence and box overlap.
     </p>
 
-    <img src="images/attack/attack_2.png" alt="YOLOv2 Detection" />
+    <img src="images/attack_2.png" alt="YOLOv2 Detection" />
 
     <h2>Patch Optimization Strategy</h2>
     <p>
@@ -80,7 +80,7 @@
       The algorithm begins by randomly initializing a patch, applies transformations (rotation, noise, scaling), overlays it on images, and forwards them through YOLOv2. Based on the resulting scores and losses, the patch is iteratively optimized.
     </p>
 
-    <img src="images/attack/attack_3.png" alt="Patch Optimization Workflow" />
+    <img src="images/attack_3.png" alt="Patch Optimization Workflow" />
 
     <h2>Our Improvements</h2>
     <p>
@@ -95,7 +95,7 @@
 loss = det_loss + nps_loss + max(tv_loss, 0.1) + mean(adv_patch)
     </pre>
 
-    <img src="images/attack/attack_4.gif" alt="Black Patch Result" />
+    <img src="images/attack_4.gif" alt="Black Patch Result" />
 
     <h3>2. Misclassification</h3>
     <p>
@@ -106,10 +106,10 @@ attack_class = normal_confs[:, 25, :]  # class 25 → umbrella
 return max(confs_for_class) - max(attack_class)
     </pre>
 
-    <img src="images/attack/attack_5.gif" alt="Bear Misclassification" />
+    <img src="images/attack_5.gif" alt="Bear Misclassification" />
     <p class="caption">Misclassified as a bear</p>
 
-    <img src="images/attack/attack_6.gif" alt="Umbrella Misclassification" />
+    <img src="images/attack_6.gif" alt="Umbrella Misclassification" />
     <p class="caption">Misclassified as an umbrella</p>
   </main>
 
