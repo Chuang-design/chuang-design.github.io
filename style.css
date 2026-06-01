@@ -665,6 +665,22 @@ nav a:hover {
   margin-top: 0.5rem;
 }
 
+/* Demo videos (converted from heavy GIFs) behave like content images */
+main video {
+  display: block;
+  width: 100%;
+  max-width: 960px;
+  height: auto;
+  margin: 1rem 0;
+}
+
+.result-column video {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  object-fit: contain;
+}
+
 /* 默认隐藏汉堡按钮 */
 .menu-toggle {
   display: none;
@@ -810,6 +826,17 @@ nav a:hover {
 }
 
 @media (max-width: 768px) {
+  /* 项目详情页头部两栏 → 单列堆叠 */
+  .project-meta-wrapper {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .project-meta-left .project-title {
+    font-size: 1.5rem;
+  }
+
   .gallery.project-page {
     grid-template-columns: 1fr; /* 单列显示 */
     gap: 2rem;
