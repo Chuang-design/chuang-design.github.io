@@ -37,7 +37,7 @@
     <div class="content-wrapper" style="margin-top: 3rem;">
       <h2 class="gallery-heading">About</h2>
       <p>
-        I'm a researcher exploring novel materials and hardware that enable interactive, intelligent, and sustainable futures. Currently a master's student at Zhejiang University advised by Prof. Guanyun Wang.
+        I'm a researcher exploring novel materials and hardware that enable interactive, intelligent, and sustainable futures. Currently a PhD candidate at Zhejiang University advised by Prof. Guanyun Wang.
       </p>
       <p><a href="about.html">Read full bio →</a></p>
     </div>
@@ -80,33 +80,10 @@
     <div class="content-wrapper" style="margin-top: 3rem;">
       <h2 class="gallery-heading">Selected Publications</h2>
 
-      <div class="pub-text" style="margin-bottom: 2rem;">
-        <div class="pub-title">
-          <span class="award-icon" title="Best Paper Honorable Mention Award">🏅</span>
-          <a href="https://dl.acm.org/doi/10.1145/3706598.3714304" target="_blank">
-            TH-Wood: Thermo-Hygro-Coordinating Wood Actuators
-          </a>
-        </div>
-        <div class="pub-authors">
-          Guanyun Wang, <strong>Chuang Chen</strong>, et al.
-        </div>
-        <div class="pub-meta">
-          ACM CHI 2025, Full Paper
-        </div>
-      </div>
-
-      <div class="pub-text" style="margin-bottom: 2rem;">
-        <div class="pub-title">
-          <a href="https://dl.acm.org/doi/10.1145/3613905.3651052" target="_blank">
-            HydroSkin: On-Skin Interfaces via Hydrographic Printing
-          </a>
-        </div>
-        <div class="pub-authors">
-          Mengyang Li#, <strong>Chuang Chen#</strong>, et al.
-        </div>
-        <div class="pub-meta">
-          ACM CHI 2024, LBW
-        </div>
+      <div id="latest-pubs">
+        <noscript>
+          <p>Please enable JavaScript to see the latest publications, or <a href="publication.html">view the full list →</a></p>
+        </noscript>
       </div>
 
       <p><a href="publication.html">View full publication list →</a></p>
@@ -126,6 +103,26 @@
         nav.classList.toggle("show");
       });
     });
+
+    // Selected Publications: always show the latest 3 entries from publication.html
+    fetch("publication.html")
+      .then((r) => r.text())
+      .then((html) => {
+        const doc = new DOMParser().parseFromString(html, "text/html");
+        const items = [...doc.querySelectorAll(".pub-item")].slice(0, 3);
+        if (!items.length) return;
+        document.getElementById("latest-pubs").innerHTML = items
+          .map((item) => {
+            const text = item.querySelector(".pub-text");
+            return text
+              ? `<div class="pub-text" style="margin-bottom: 2rem;">${text.innerHTML}</div>`
+              : "";
+          })
+          .join("");
+      })
+      .catch(() => {
+        /* fetch is blocked on file://; the "view full list" link below still works */
+      });
   </script>
 
 </body>
