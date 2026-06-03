@@ -192,8 +192,8 @@ footer a:hover {
 .sub-heading {
   font-size: 1.2rem;
   font-weight: bold;
-  margin-top: 3rem;
-  margin-bottom: 1.2rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
   color: #000;
 }
 
@@ -255,6 +255,8 @@ nav a:hover {
 
 .gallery.project-page {
   grid-template-columns: repeat(2, 1fr);
+  column-gap: clamp(1.2rem, 2.5vw, 2rem);
+  row-gap: 1.6rem;
 }
 
 /* ✅ project 页面：使用 3:2 横图比例 */
@@ -287,6 +289,7 @@ nav a:hover {
 .project-card a {
   display: block;
   overflow: hidden;
+  border-radius: 16px;     /* rounded corners, like the home work cards */
 }
 
 .project-card img {
@@ -329,6 +332,7 @@ nav a:hover {
 
 .project-info {
   text-align: left;
+  margin-top: 0.7rem;       /* small gap under the rounded image */
 }
 
 .project-title {
@@ -554,9 +558,9 @@ nav a:hover {
 .project-main-image img {
   width: 100%;
   max-width: 960px;
-  margin: 2rem auto 1.5rem auto;
+  margin: 2rem auto 0.6rem auto;  /* sit closer to the title below */
   display: block;
-  border-radius: 0; /* ✅ 无圆角 */
+  border-radius: 16px;            /* rounded, like the home cards */
 }
 
 /* 两栏排布 */
@@ -570,7 +574,13 @@ nav a:hover {
 .project-meta-left .project-title {
   font-size: 1.8rem;
   font-weight: bold;
+  margin-top: 0;          /* drop the default <h1> top margin */
   margin-bottom: 0.5rem;
+}
+
+/* Keep the banner image close to the title (beats .content-wrapper img) */
+.content-wrapper .project-main-image img {
+  margin: 2rem auto 0.75rem;
 }
 
 .project-meta-left .project-date {
@@ -596,7 +606,7 @@ nav a:hover {
 .project-gallery-column img {
   width: 100%;
   margin: 1.5rem 0;
-  border-radius: 0; /* 去掉圆角 */
+  border-radius: 16px; /* rounded, like the home cards */
   display: block;
 }
 
@@ -636,6 +646,7 @@ nav a:hover {
   margin: 2rem auto;
   max-width: 100%;
   height: auto;
+  border-radius: 16px;
 }
 
 .result-pair {
@@ -656,7 +667,7 @@ nav a:hover {
   width: 100%;
   height: auto;
   object-fit: contain;
-  border-radius: 0; /* 取消圆角 */
+  border-radius: 16px;
 }
 
 .result-label {
@@ -672,6 +683,7 @@ main video {
   max-width: 960px;
   height: auto;
   margin: 1rem 0;
+  border-radius: 16px;
 }
 
 .result-column video {
@@ -679,6 +691,7 @@ main video {
   height: auto;
   margin: 0;
   object-fit: contain;
+  border-radius: 16px;
 }
 
 /* 默认隐藏汉堡按钮 */
@@ -871,3 +884,278 @@ main video {
     font-size: 0.8rem;
   }
 }
+
+
+/* =========================================================
+   HOME (redesigned) — scoped under body.home-v2
+   Big hero headline, pill buttons, large rounded image grid,
+   meta-column + statement bio. Monochrome, image-forward.
+   ========================================================= */
+
+.home-v2 .home-main {
+  max-width: 960px;        /* match the header/nav width */
+  margin: 0 auto;
+  padding: 0 1rem;         /* match .header-inner side padding */
+}
+
+/* Header stays identical to the rest of the site (shared markup + CSS). */
+
+/* ---- Pill buttons ---- */
+.home-v2 .pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1.2rem;
+  border: 1px solid #ddd;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--text);
+  transition: background-color .25s var(--ease), color .25s var(--ease), border-color .25s var(--ease), transform .25s var(--ease);
+}
+.home-v2 .pill:hover {
+  background-color: var(--text);
+  border-color: var(--text);
+  color: #fff;
+  transform: translateY(-1px);
+}
+.home-v2 .pill-solid {
+  background-color: var(--text);
+  border-color: var(--text);
+  color: #fff;
+}
+.home-v2 .pill-solid:hover {
+  background-color: #fff;
+  color: var(--text);
+}
+
+/* ---- Hero (small meta left, name as the main visual on the right) ---- */
+.home-v2 .lead {
+  display: grid;
+  grid-template-columns: minmax(170px, 0.8fr) minmax(0, 2.3fr);
+  gap: clamp(1.5rem, 5vw, 4rem);
+  align-items: end;
+  padding-top: clamp(2.5rem, 9vh, 6rem);
+  padding-bottom: clamp(1.2rem, 3vw, 2rem);
+}
+.home-v2 .lead-meta {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: end;
+}
+.home-v2 .lead-blurb {
+  margin: 0;
+  max-width: 26ch;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+.home-v2 .lead-stamp {
+  margin: 1.1rem 0 0;
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  color: var(--text-faint);
+}
+.home-v2 .lead-main {
+  grid-column: 2;
+  grid-row: 1;
+  text-align: right;
+}
+.home-v2 .lead-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-bottom: 1.2rem;
+}
+.home-v2 .lead-name {
+  margin: 0;
+  font-size: clamp(2.4rem, 5.6vw, 4.4rem);
+  font-weight: 700;
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+  color: #000;
+}
+.home-v2 .lead-slogan {
+  margin: 1rem 0 0 auto;
+  max-width: 42ch;
+  font-size: clamp(1.05rem, 1.8vw, 1.4rem);
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--text-muted);
+}
+
+/* ---- Selected Work ---- */
+.home-v2 .work {
+  margin-top: clamp(1rem, 2.5vw, 1.8rem);
+}
+.home-v2 .work-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: clamp(1.2rem, 2.5vw, 2.2rem);
+  align-items: start;
+}
+.home-v2 .work-card {
+  text-decoration: none;
+  color: var(--text);
+  display: block;
+}
+/* Varied sizing: large cards span 4 cols, small cards span 2 */
+.home-v2 .work-card.is-lg { grid-column: span 4; }
+.home-v2 .work-card.is-sm { grid-column: span 2; }
+
+.home-v2 .work-frame {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  background: var(--band);
+  height: clamp(240px, 26vw, 380px); /* uniform height — all images aligned */
+}
+.home-v2 .work-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .6s var(--ease);
+}
+.home-v2 .work-card:hover .work-frame img {
+  transform: scale(1.045);
+}
+
+/* Hover overlay: project name + year */
+.home-v2 .work-tag {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.1rem 1.2rem;
+  color: #fff;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0) 55%);
+  opacity: 0;
+  transition: opacity .35s var(--ease);
+}
+.home-v2 .work-card:hover .work-tag {
+  opacity: 1;
+}
+.home-v2 .work-tag-name {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+.home-v2 .work-tag-year {
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+/* ---- Bio ---- */
+.home-v2 .bio {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  margin-top: clamp(3.5rem, 9vw, 6.5rem);
+  padding-top: clamp(2rem, 5vw, 3rem);
+  border-top: 1px solid #ececec;
+  align-items: start;
+}
+.home-v2 .bio-label {
+  margin: 0 0 1rem;
+  /* tiny nudge so the small caps label's first line optically aligns
+     with the larger statement's first line on the right */
+  padding-top: 0.12rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+.home-v2 .bio-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.home-v2 .bio-list li {
+  font-size: 0.98rem;
+  line-height: 2;
+  color: var(--text-muted);
+}
+.home-v2 .bio-statement {
+  margin: 0;
+  font-size: clamp(1.15rem, 2.1vw, 1.6rem);
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: #000;
+}
+.home-v2 .bio-inline {
+  display: inline-block;
+  padding: 0.05em 0.55em;
+  border: 1px solid #d8d8d8;
+  border-radius: 999px;
+  text-decoration: none;
+  color: #000;
+  transition: background-color .25s var(--ease), color .25s var(--ease);
+}
+.home-v2 .bio-inline:hover {
+  background: var(--text);
+  color: #fff;
+}
+.home-v2 .bio-text {
+  margin: 1.6rem 0 0;
+  max-width: 62ch;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+.home-v2 .bio-right .pill {
+  margin-top: 1.8rem;
+}
+
+/* ---- Generic scroll-reveal target ---- */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .7s var(--ease), transform .7s var(--ease);
+}
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal { opacity: 1 !important; transform: none !important; }
+}
+
+/* ---- Mobile ---- */
+@media (max-width: 768px) {
+  .home-v2 .lead {
+    grid-template-columns: 1fr;
+    gap: 1.3rem;
+    padding-top: clamp(2rem, 8vh, 3.5rem);
+    align-items: start;
+  }
+  .home-v2 .lead-main,
+  .home-v2 .lead-meta {
+    grid-column: 1;
+    grid-row: auto;
+  }
+  .home-v2 .lead-main { text-align: left; }
+  .home-v2 .lead-actions { justify-content: flex-start; }
+  .home-v2 .lead-name { font-size: clamp(2.4rem, 11vw, 3.4rem); }
+  .home-v2 .lead-slogan { margin-left: 0; }
+  .home-v2 .lead-blurb { max-width: none; }
+  .home-v2 .work-grid {
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+  }
+  .home-v2 .work-card.is-lg,
+  .home-v2 .work-card.is-sm { grid-column: auto; }
+  .home-v2 .work-frame { height: clamp(200px, 56vw, 280px); border-radius: 16px; }
+  /* No hover on touch — keep the project name/year visible */
+  .home-v2 .work-tag { opacity: 1; }
+  .home-v2 .bio {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+

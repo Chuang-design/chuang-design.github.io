@@ -8,14 +8,18 @@
   <script src="script.js"></script>
   <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
 </head>
-<body>
+<body class="home-v2">
 
   <header>
     <div class="header-inner">
-      <div class="site-title"><a href="index.html">Chuang Chen</a></div>
+      <div class="site-title"><a href="index.html">CHUANG</a></div>
 
-      <!-- 汉堡按钮 -->
-      <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+      <!-- ✅ 汉堡图标（推荐用 SVG） -->
+      <button class="menu-toggle" aria-label="Toggle navigation">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M3 6h18M3 12h18M3 18h18" stroke="black" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
 
       <nav class="main-nav">
         <a href="project.html">Project</a>
@@ -26,70 +30,74 @@
     </div>
   </header>
 
-  <main class="pub-container">
+  <main class="home-main">
 
-    <!-- Banner Section -->
-  
-    <div class="about-banner">
-      <img src="assets/profile.jpg" alt="Chuang Chen" class="about-photo" />
-    </div>
-
-    <!-- About Summary -->
-    <div class="content-wrapper" style="margin-top: 3rem;">
-      <h2 class="gallery-heading">About</h2>
-      <p>
-        I'm a researcher exploring novel materials and hardware that enable interactive, intelligent, and sustainable futures. Currently a PhD candidate at Zhejiang University advised by Prof. Guanyun Wang.
-      </p>
-      <p><a href="about.html">Read full bio →</a></p>
-    </div>
-
-    <!-- Recent Projects -->
-    <div class="content-wrapper" style="margin-top: 3rem;">
-      <h2 class="gallery-heading">Recent Projects</h2>
-      <section class="gallery">
-        <div class="project-card">
-          <div class="black-bar"></div>
-          <a href="projects/kiriinflate/index.html"><img src="assets/thumbnails/KiriInflate.png" alt="KiriInflate"></a>
-          <div class="project-info">
-            <div class="project-title">KiriInflate</div>
-            <div class="project-date">2025</div>
-          </div>
+    <!-- HERO -->
+    <section class="lead">
+      <div class="lead-main">
+        <div class="lead-actions reveal">
+          <a class="pill pill-solid" href="project.html">View work</a>
+          <a class="pill" href="about.html">About me</a>
         </div>
-
-        <div class="project-card">
-          <div class="black-bar"></div>
-          <a href="projects/th-wood/index.html"><img src="assets/thumbnails/TH-Wood.png" alt="TH-Wood"></a>
-          <div class="project-info">
-            <div class="project-title">TH-Wood</div>
-            <div class="project-date">2025</div>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="black-bar"></div>
-          <a href="projects/hydroskin/index.html"><img src="assets/thumbnails/Hydroskin.png" alt="HydroSkin"></a>
-          <div class="project-info">
-            <div class="project-title">HydroSkin</div>
-            <div class="project-date">2024</div>
-          </div>
-        </div>
-
-      </section>
-      <p style="margin-top: 1rem;"><a href="project.html">View all projects →</a></p>
-    </div>
-
-    <!-- Publications -->
-    <div class="content-wrapper" style="margin-top: 3rem;">
-      <h2 class="gallery-heading">Selected Publications</h2>
-
-      <div id="latest-pubs">
-        <noscript>
-          <p>Please enable JavaScript to see the latest publications, or <a href="publication.html">view the full list →</a></p>
-        </noscript>
+        <h1 class="lead-name reveal">Chuang Chen</h1>
+        <p class="lead-slogan reveal">Fabricating a smarter and more sustainable future.</p>
       </div>
+      <div class="lead-meta reveal">
+        <p class="lead-blurb">PhD candidate at<br>Zhejiang University,<br>College of Artificial Intelligence.</p>
+        <p class="lead-stamp">Based in Hangzhou, China</p>
+      </div>
+    </section>
 
-      <p><a href="publication.html">View full publication list →</a></p>
-    </div>
+    <!-- WORK -->
+    <section class="work">
+      <div class="work-grid">
+        <a class="work-card is-lg reveal" href="projects/kiriinflate/index.html">
+          <div class="work-frame">
+            <img src="assets/thumbnails/KiriInflate-3x2.png" alt="KiriInflate">
+            <span class="work-tag"><span class="work-tag-name">KiriInflate</span><span class="work-tag-year">2025</span></span>
+          </div>
+        </a>
+
+        <a class="work-card is-sm reveal" href="projects/th-wood/index.html">
+          <div class="work-frame">
+            <img src="assets/thumbnails/TH-Wood-3x2.png" alt="TH-Wood">
+            <span class="work-tag"><span class="work-tag-name">TH-Wood</span><span class="work-tag-year">2025</span></span>
+          </div>
+        </a>
+
+        <a class="work-card is-sm reveal" href="projects/hydroskin/index.html">
+          <div class="work-frame">
+            <img src="assets/thumbnails/HydroSkin-3x2.png" alt="HydroSkin">
+            <span class="work-tag"><span class="work-tag-name">HydroSkin</span><span class="work-tag-year">2024</span></span>
+          </div>
+        </a>
+
+        <a class="work-card is-lg reveal" href="projects/snapinflatable/index.html">
+          <div class="work-frame">
+            <img src="assets/thumbnails/Snapinflatable-3x2.png" alt="SnapInflatable">
+            <span class="work-tag"><span class="work-tag-name">SnapInflatable</span><span class="work-tag-year">2024</span></span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- BIO -->
+    <section class="bio">
+      <div class="bio-left reveal">
+        <p class="bio-label">Research interests</p>
+        <ul class="bio-list">
+          <li>Personal fabrication</li>
+          <li>Smart materials</li>
+          <li>Human–computer interaction</li>
+          <li>Sustainable design</li>
+        </ul>
+      </div>
+      <div class="bio-right">
+        <p class="bio-statement reveal">Currently a PhD candidate at <a class="bio-inline" href="https://design.zju.edu.cn/guanyunlab/" target="_blank">Guanyun Lab</a>, advised by Prof. Guanyun Wang.</p>
+        <p class="bio-text reveal">My research focuses on personal fabrication — a key technology that empowers people by combining innovation with sustainability. I envision a world where customized production improves lives while protecting our planet.</p>
+      </div>
+    </section>
+
   </main>
 
   <footer>
@@ -105,26 +113,6 @@
         nav.classList.toggle("show");
       });
     });
-
-    // Selected Publications: always show the latest 3 entries from publication.html
-    fetch("publication.html")
-      .then((r) => r.text())
-      .then((html) => {
-        const doc = new DOMParser().parseFromString(html, "text/html");
-        const items = [...doc.querySelectorAll(".pub-item")].slice(0, 3);
-        if (!items.length) return;
-        document.getElementById("latest-pubs").innerHTML = items
-          .map((item) => {
-            const text = item.querySelector(".pub-text");
-            return text
-              ? `<div class="pub-text" style="margin-bottom: 2rem;">${text.innerHTML}</div>`
-              : "";
-          })
-          .join("");
-      })
-      .catch(() => {
-        /* fetch is blocked on file://; the "view full list" link below still works */
-      });
   </script>
 
 </body>

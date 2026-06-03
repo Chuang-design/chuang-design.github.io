@@ -21,7 +21,8 @@
       ".project-meta-wrapper",
       ".project-gallery-column img",
       ".gallery .project-card",
-      ".pub-item"
+      ".pub-item",
+      ".reveal"
     ].join(",");
 
     var els = Array.prototype.slice.call(doc.querySelectorAll(selector));
