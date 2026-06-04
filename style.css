@@ -256,7 +256,7 @@ nav a:hover {
 .gallery.project-page {
   grid-template-columns: repeat(2, 1fr);
   column-gap: clamp(1.2rem, 2.5vw, 2rem);
-  row-gap: 1.6rem;
+  row-gap: 1rem;
 }
 
 /* ✅ project 页面：使用 3:2 横图比例 */
@@ -290,10 +290,15 @@ nav a:hover {
   display: block;
   overflow: hidden;
   border-radius: 16px;     /* rounded corners, like the home work cards */
+  line-height: 0;
+  font-size: 0;
+  aspect-ratio: 16 / 9;    /* frame defines the size; the image fills it */
+  width: 100%;
 }
 
 .project-card img {
   width: 100%;
+  height: 100%;
   object-fit: cover;
 
   display: block;
@@ -332,7 +337,7 @@ nav a:hover {
 
 .project-info {
   text-align: left;
-  margin-top: 0.7rem;       /* small gap under the rounded image */
+  margin-top: 0.4rem;       /* keep info close to the image */
 }
 
 .project-title {
@@ -491,6 +496,14 @@ nav a:hover {
 .about-text a:hover {
   color: var(--accent);
   text-decoration: underline;
+}
+
+.about-actions {
+  max-width: 960px;
+  margin: 2rem auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
 }
 
 
@@ -771,7 +784,7 @@ main video {
     background: var(--banner);
     width: 100vw;
     padding: 0;
-    margin: 0;
+    margin: 0 0 0 calc(50% - 50vw); /* full-bleed without right overflow */
     height: auto;
     min-height: 320px; /* ✅ 确保灰色块高度一致 */
     position: relative;
@@ -901,7 +914,7 @@ main video {
 /* Header stays identical to the rest of the site (shared markup + CSS). */
 
 /* ---- Pill buttons ---- */
-.home-v2 .pill {
+.pill {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
@@ -914,18 +927,18 @@ main video {
   color: var(--text);
   transition: background-color .25s var(--ease), color .25s var(--ease), border-color .25s var(--ease), transform .25s var(--ease);
 }
-.home-v2 .pill:hover {
+.pill:hover {
   background-color: var(--text);
   border-color: var(--text);
   color: #fff;
   transform: translateY(-1px);
 }
-.home-v2 .pill-solid {
+.pill-solid {
   background-color: var(--text);
   border-color: var(--text);
   color: #fff;
 }
-.home-v2 .pill-solid:hover {
+.pill-solid:hover {
   background-color: #fff;
   color: var(--text);
 }
