@@ -2,87 +2,57 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About | Chuang Chen</title>
-  <meta name="description" content="About Chuang Chen — PhD candidate at Zhejiang University's College of Artificial Intelligence, advised by Prof. Guanyun Wang at Guanyun Lab, working on personal fabrication and human–computer interaction." />
+  <meta name="description" content="About Chuang Chen, a PhD candidate at Zhejiang University researching personal fabrication, smart materials, sustainable design, and human–computer interaction." />
   <meta name="author" content="Chuang Chen" />
+  <link rel="canonical" href="https://chuang-design.github.io/about.html" />
   <link rel="stylesheet" href="style.css" />
   <script src="script.js"></script>
   <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
 </head>
-
-
-
-
-
 <body>
-  <header>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
     <div class="header-inner">
-      <div class="site-title"><a href="index.html">CHUANG</a></div>
-  
-      <!-- ✅ 汉堡图标（推荐用 SVG） -->
-      <button class="menu-toggle" aria-label="Toggle navigation">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path d="M3 6h18M3 12h18M3 18h18" stroke="black" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-      </button>
-  
-      <!-- ✅ 导航菜单 -->
-      <nav class="main-nav">
-        <a href="project.html">Project</a>
-        <a href="publication.html">Publication</a>
-        <a href="cv.html">CV</a>
-        <a href="about.html">About</a>
+      <a class="site-title" href="index.html" aria-label="Chuang Chen homepage"><span>Chuang Chen</span></a>
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-nav"><span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span></button>
+      <nav class="main-nav" id="primary-nav" aria-label="Primary navigation">
+        <a href="project.html">Projects</a>
+        <a href="publication.html">Publications</a>
+        <a href="news.html">News</a>
+        <a href="about.html" aria-current="page">About</a>
       </nav>
     </div>
   </header>
 
-  <main class="about-wrapper">
+  <main id="main-content" class="about-wrapper">
     <div class="content-wrapper">
+      <p class="eyebrow">Profile</p>
       <h1 class="page-heading">About</h1>
-      <p class="about-slogan"><em>Fabricating a smarter and more sustainable future.</em></p>
-    </div>
 
-    <div class="about-banner">
-      <img src="assets/profile.jpg" alt="Chuang Chen" class="about-photo" />
-    </div>
+      <div class="about-layout">
+        <figure class="about-banner reveal">
+          <img src="assets/optimized/profile.webp" alt="Portrait of Chuang Chen" class="about-photo" width="1600" height="1600" />
+        </figure>
 
-    <div class="content-wrapper">
-      <div class="about-text">
-        <p>
-          My name is Chuang Chen. I am currently a PhD candidate at Zhejiang University's College of Artificial Intelligence, advised by Prof. Guanyun Wang at
-          <a href="https://design.zju.edu.cn/guanyunlab/" target="_blank">Guanyun Lab</a>.
-        </p>
+        <div class="about-text reveal">
+          <p>I am a PhD candidate at Zhejiang University’s College of Artificial Intelligence, advised by Prof. Guanyun Wang at <a href="https://design.zju.edu.cn/guanyunlab/" target="_blank" rel="noopener">Guanyun Lab</a>.</p>
+          <p>My research focuses on personal fabrication as a way to empower people through customized and adaptive production. I work across fabrication methods, smart material systems, tangible interaction, and sustainable design.</p>
+          <p>I envision a future in which fabrication technologies help people create objects that respond to individual needs while using materials and resources more responsibly.</p>
 
-        <p>
-          My research focuses on personal fabrication – key technology that empowers people by combining innovation with sustainability. I envision a world where customized production improves lives while protecting our planet.
-        </p>
+          <div class="about-actions">
+            <a class="text-action text-action-primary" href="project.html">View projects <span aria-hidden="true">↗</span></a>
+            <a class="text-action" href="publication.html">Read publications <span aria-hidden="true">↗</span></a>
+            <a class="text-action" href="https://scholar.google.com/citations?user=wjtaQaMAAAAJ&amp;hl=en&amp;oi=sra" target="_blank" rel="noopener">Google Scholar <span aria-hidden="true">↗</span></a>
+          </div>
 
-        <p>
-          Email: chenchuang@zju.edu.cn
-        </p>
-      </div>
-
-      <div class="about-actions">
-        <a class="pill pill-solid" href="project.html">View my Projects</a>
-        <a class="pill" href="cv.html">CV</a>
-        <a class="pill" href="https://scholar.google.com/citations?user=wjtaQaMAAAAJ&hl=zh-CN&oi=sra" target="_blank">Google Scholar</a>
+          <p class="about-contact"><span>Email</span><a href="mailto:chenchuang@zju.edu.cn">chenchuang@zju.edu.cn</a></p>
+        </div>
       </div>
     </div>
   </main>
 
-  <footer>
-    &copy; 2025 Chuang Chen. All Rights Reserved.
-  </footer>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const toggle = document.querySelector(".menu-toggle");
-      const nav = document.querySelector(".main-nav");
-      toggle.addEventListener("click", () => {
-        nav.classList.toggle("show");
-      });
-    });
-  </script>
+  <footer class="site-footer"><p>© 2026 Chuang Chen</p><p><a href="mailto:chenchuang@zju.edu.cn">chenchuang@zju.edu.cn</a></p></footer>
 </body>
 </html>
