@@ -9,28 +9,25 @@
   <link rel="icon" href="../../assets/favicon.ico" type="image/x-icon" />
 </head>
 <body>
-  <header>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
     <div class="header-inner">
-      <div class="site-title"><a href="../../index.html">CHUANG</a></div>
-      <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
-      <nav class="main-nav">
-        <a href="../../project.html">Project</a>
-        <a href="../../publication.html">Publication</a>
-        <a href="../../cv.html">CV</a>
+      <a class="site-title" href="../../index.html" aria-label="Chuang Chen homepage"><span>Chuang Chen</span></a>
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-nav"><span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span></button>
+      <nav class="main-nav" id="primary-nav" aria-label="Primary navigation">
+        <a href="../../project.html" aria-current="page">Projects</a>
+        <a href="../../publication.html">Publications</a>
+        <a href="../../news.html">News</a>
         <a href="../../about.html">About</a>
       </nav>
     </div>
   </header>
 
-  <main class="content-wrapper">
-
-    <!-- 主图 -->
-    <div class="project-main-image">
+  <main id="main-content" class="content-wrapper">
+<div class="project-main-image">
       <img src="images/E-Orthosis_1(4).jpg" alt="Main Image of E-Orthosis" />
     </div>
-
-    <!-- 信息区域，两栏布局 -->
-    <div class="project-meta-wrapper">
+<div class="project-meta-wrapper">
       <div class="project-meta-left">
         <h1 class="project-title">E-Orthosis</h1>
         <p class="project-date">April 2023</p>
@@ -43,12 +40,10 @@
           Orthoses with electronic functions have emerged as a promising medical product in response to the increasing demand for rehabilitation training, therapy assistance, and health monitoring. However, fabricating this “smart orthosis” often requires long development cycles and exorbitant prices. We introduce <strong>E-Orthosis</strong>, an integrated fabrication approach with construction toolkits for healthcare professionals to rapidly embed electronics into off-the-shelf orthoses. The system includes modular magnetic interfaces, textile electrodes, and tools for embedding and circuit transfer.
         </p>
         <p>
-          <strong>Publication:</strong> <a href="https://dl.acm.org/doi/abs/10.1145/3544548.3581471" target="_blank">ACM CHI Conference on Human Factors in Computing Systems 2023， Full Paper</a>
+          <strong>Publication:</strong> <a href="https://dl.acm.org/doi/abs/10.1145/3544548.3581471" target="_blank" rel="noopener">ACM CHI Conference on Human Factors in Computing Systems 2023， Full Paper</a>
         </p>
       </div>
     </div>
-
-<!-- 视频展示 -->
 <div class="video-wrapper">
     <div class="video-inner">
       <iframe 
@@ -58,11 +53,7 @@
       </iframe>
     </div>
   </div>
-  
-  
-
-    <!-- 图组展示（每张独占一行） -->
-    <div class="project-gallery-column">
+<div class="project-gallery-column">
       <img src="images/E-Orthosis_3.jpg" alt="E-Orthosis Detail 1">
       <img src="images/E-Orthosis_4.gif" alt="E-Orthosis Detail 2">
       <img src="images/E-Orthosis_5.jpg" alt="E-Orthosis Detail 3">
@@ -80,21 +71,8 @@
       <img src="images/E-Orthosis_17.jpg" alt="E-Orthosis Detail 15">
     </div>
   </main>
-
-  <!-- 页脚 -->
-  <footer>
-    &copy; 2025 Chuang Chen · <a href="mailto:chenchuang@zju.edu.cn">chenchuang@zju.edu.cn</a>
+<footer>
+    &copy; 2026 Chuang Chen · <a href="mailto:chenchuang@zju.edu.cn">chenchuang@zju.edu.cn</a>
   </footer>
-
-  <!-- 汉堡控制 -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const toggle = document.querySelector(".menu-toggle");
-      const nav = document.querySelector(".main-nav");
-      toggle.addEventListener("click", () => {
-        nav.classList.toggle("show");
-      });
-    });
-  </script>
 </body>
 </html>

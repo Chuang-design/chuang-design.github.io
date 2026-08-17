@@ -1,29 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="research-page">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Chuang Chen | PhD Candidate at Zhejiang University</title>
-  <meta name="description" content="Chuang Chen (陈创) — PhD candidate at Zhejiang University's College of Artificial Intelligence, researching personal fabrication, smart materials, and human–computer interaction at Guanyun Lab." />
-  <meta name="author" content="Chuang Chen (陈创)" />
-  <meta name="keywords" content="Chuang Chen, chuangchen, 陈创, 陈创 浙江大学, Zhejiang University, College of Artificial Intelligence, Guanyun Lab, personal fabrication, human-computer interaction, HCI, smart materials" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chuang Chen | HCI Researcher</title>
+  <meta name="description" content="Chuang Chen is a PhD candidate at Zhejiang University researching personal fabrication, smart materials, sustainable design, and human–computer interaction." />
+  <meta name="author" content="Chuang Chen" />
+  <meta name="keywords" content="Chuang Chen, HCI, human-computer interaction, personal fabrication, smart materials, sustainable design, Zhejiang University, Guanyun Lab" />
   <link rel="canonical" href="https://chuang-design.github.io/" />
 
-  <!-- Open Graph / social preview -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Chuang Chen | PhD Candidate at Zhejiang University" />
-  <meta property="og:description" content="Researcher in personal fabrication, smart materials, and human–computer interaction at Guanyun Lab, Zhejiang University." />
+  <meta property="og:title" content="Chuang Chen | HCI Researcher" />
+  <meta property="og:description" content="Research in personal fabrication, smart materials, sustainable design, and human–computer interaction." />
   <meta property="og:url" content="https://chuang-design.github.io/" />
-  <meta property="og:image" content="https://chuang-design.github.io/assets/profile.jpg" />
+  <meta property="og:image" content="https://chuang-design.github.io/assets/optimized/kiriinflate.webp" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Structured data: tells search engines this is Chuang Chen's homepage -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Chuang Chen",
-    "alternateName": "陈创",
     "url": "https://chuang-design.github.io/",
     "image": "https://chuang-design.github.io/assets/profile.jpg",
     "email": "mailto:chenchuang@zju.edu.cn",
@@ -33,120 +30,181 @@
       "name": "Zhejiang University, College of Artificial Intelligence"
     },
     "sameAs": [
-      "https://scholar.google.com/citations?user=wjtaQaMAAAAJ&hl=zh-CN"
+      "https://scholar.google.com/citations?user=wjtaQaMAAAAJ&hl=en"
     ]
   }
   </script>
+
   <link rel="stylesheet" href="style.css" />
   <script src="script.js"></script>
   <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
 </head>
-<body class="home-v2">
+<body class="research-home">
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
-  <header>
+  <header class="site-header">
     <div class="header-inner">
-      <div class="site-title"><a href="index.html">CHUANG</a></div>
+      <a class="site-title" href="index.html" aria-label="Chuang Chen homepage">
+        <span>Chuang Chen</span>
+      </a>
 
-      <!-- ✅ 汉堡图标（推荐用 SVG） -->
-      <button class="menu-toggle" aria-label="Toggle navigation">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path d="M3 6h18M3 12h18M3 18h18" stroke="black" stroke-width="2" stroke-linecap="round"/>
-        </svg>
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-nav">
+        <span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
       </button>
 
-      <nav class="main-nav">
-        <a href="project.html">Project</a>
-        <a href="publication.html">Publication</a>
-        <a href="cv.html">CV</a>
+      <nav class="main-nav" id="primary-nav" aria-label="Primary navigation">
+        <a href="project.html">Projects</a>
+        <a href="publication.html">Publications</a>
+        <a href="news.html">News</a>
         <a href="about.html">About</a>
       </nav>
     </div>
   </header>
 
-  <main class="home-main">
+  <main id="main-content" class="research-main">
+    <section class="research-hero" aria-labelledby="hero-title">
+      <figure class="hero-media" data-hero-reel aria-label="Selected research projects">
+        <a class="hero-slide is-active" data-hero-slide href="projects/th-wood/index.html" aria-label="Explore TH-Wood">
+          <video muted loop playsinline preload="metadata" poster="assets/posters/th-wood.webp">
+            <source src="assets/motion/th-wood.mp4" type="video/mp4" />
+          </video>
+        </a>
+        <a class="hero-slide" data-hero-slide href="projects/snapinflatable/index.html" aria-label="Explore SnapInflatables" aria-hidden="true" tabindex="-1">
+          <video muted loop playsinline preload="none" poster="assets/posters/snapinflatables.webp">
+            <source src="assets/motion/snapinflatables.mp4" type="video/mp4" />
+          </video>
+        </a>
+        <a class="hero-slide" data-hero-slide href="projects/e-orthosis/index.html" aria-label="Explore E-Orthosis" aria-hidden="true" tabindex="-1">
+          <video muted loop playsinline preload="none" poster="assets/posters/e-orthosis.webp">
+            <source src="assets/motion/e-orthosis.mp4" type="video/mp4" />
+          </video>
+        </a>
+        <button class="hero-arrow hero-arrow-prev" type="button" data-hero-prev aria-label="Previous project"><span aria-hidden="true">←</span></button>
+        <button class="hero-arrow hero-arrow-next" type="button" data-hero-next aria-label="Next project"><span aria-hidden="true">→</span></button>
+      </figure>
 
-    <!-- HERO -->
-    <section class="lead">
-      <div class="lead-main">
-        <div class="lead-actions reveal">
-          <a class="pill pill-solid" href="project.html">View work</a>
-          <a class="pill" href="about.html">About me</a>
+      <div class="hero-copy reveal">
+        <h1 id="hero-title">Chuang Chen</h1>
+        <div class="hero-info">
+          <p class="hero-kicker">HCI researcher · PhD candidate at Zhejiang University</p>
+          <p class="hero-vision">I explore fabrication and responsive materials for adaptive, accessible, and sustainable interactions.</p>
         </div>
-        <h1 class="lead-name reveal">Chuang Chen</h1>
-        <p class="lead-slogan reveal">Fabricating a smarter and more sustainable future.</p>
-      </div>
-      <div class="lead-meta reveal">
-        <p class="lead-blurb">PhD candidate at<br>Zhejiang University,<br>College of Artificial Intelligence.</p>
-        <p class="lead-stamp">Based in Hangzhou, China</p>
       </div>
     </section>
 
-    <!-- WORK -->
-    <section class="work">
-      <div class="work-grid">
-        <a class="work-card is-lg reveal" href="projects/kiriinflate/index.html">
-          <div class="work-frame">
-            <img src="assets/thumbnails/KiriInflate-3x2.png" alt="KiriInflate">
-            <span class="work-tag"><span class="work-tag-name">KiriInflate</span><span class="work-tag-year">2025</span></span>
-          </div>
-        </a>
-
-        <a class="work-card is-sm reveal" href="projects/th-wood/index.html">
-          <div class="work-frame">
-            <img src="assets/thumbnails/TH-Wood-3x2.png" alt="TH-Wood">
-            <span class="work-tag"><span class="work-tag-name">TH-Wood</span><span class="work-tag-year">2025</span></span>
-          </div>
-        </a>
-
-        <a class="work-card is-sm reveal" href="projects/hydroskin/index.html">
-          <div class="work-frame">
-            <img src="assets/thumbnails/HydroSkin-3x2.png" alt="HydroSkin">
-            <span class="work-tag"><span class="work-tag-name">HydroSkin</span><span class="work-tag-year">2024</span></span>
-          </div>
-        </a>
-
-        <a class="work-card is-lg reveal" href="projects/snapinflatable/index.html">
-          <div class="work-frame">
-            <img src="assets/thumbnails/Snapinflatable-3x2.png" alt="SnapInflatable">
-            <span class="work-tag"><span class="work-tag-name">SnapInflatable</span><span class="work-tag-year">2024</span></span>
-          </div>
-        </a>
+    <section class="home-section research-profile home-intro" id="intro" aria-label="Introduction">
+      <figure class="home-profile-photo reveal">
+        <img src="assets/optimized/profile.webp" alt="Portrait of Chuang Chen" width="1600" height="1600" />
+      </figure>
+      <div class="profile-copy reveal">
+        <h2 class="profile-name">Chuang Chen</h2>
+        <p>I am a PhD candidate at Zhejiang University’s College of Artificial Intelligence, advised by Prof. Guanyun Wang at <a href="https://design.zju.edu.cn/guanyunlab/" target="_blank" rel="noopener">Guanyun Lab</a>. My research investigates personal fabrication as a way to empower people through customized, adaptive, and sustainable production.</p>
+        <p class="profile-vision">Fabricating a smarter and more sustainable future.</p>
+        <div class="profile-links">
+          <a href="mailto:chenchuang@zju.edu.cn">Email</a>
+          <a href="https://scholar.google.com/citations?user=wjtaQaMAAAAJ&amp;hl=en&amp;oi=sra" target="_blank" rel="noopener">Google Scholar</a>
+          <a href="about.html">More about me</a>
+        </div>
       </div>
     </section>
 
-    <!-- BIO -->
-    <section class="bio">
-      <div class="bio-left reveal">
-        <p class="bio-label">Research interests</p>
-        <ul class="bio-list">
-          <li>Personal fabrication</li>
-          <li>Smart materials</li>
-          <li>Human–computer interaction</li>
-          <li>Sustainable design</li>
-        </ul>
+    <section class="home-section" id="projects" aria-labelledby="projects-title">
+      <div class="section-heading reveal">
+        <h2 id="projects-title">Selected projects</h2>
+        <a class="section-link" href="project.html">All projects <span aria-hidden="true">↗</span></a>
       </div>
-      <div class="bio-right">
-        <p class="bio-statement reveal">Currently a PhD candidate at <a class="bio-inline" href="https://design.zju.edu.cn/guanyunlab/" target="_blank">Guanyun Lab</a>, advised by Prof. Guanyun Wang.</p>
-        <p class="bio-text reveal">My research focuses on personal fabrication — a key technology that empowers people by combining innovation with sustainability. I envision a world where customized production improves lives while protecting our planet.</p>
+
+      <div class="featured-grid">
+        <article class="featured-project reveal">
+          <a class="project-media" href="projects/hygrofold/index.html" aria-label="HygroFold project">
+            <img src="projects/hygrofold/images/pub.png" alt="" width="800" height="450" />
+          </a>
+          <div class="project-summary">
+            <div><h3><a href="projects/hygrofold/index.html">HygroFold</a></h3><p>Milli-scale shape-changing interfaces patterned on cellophane film.</p></div>
+            <span class="project-venue">CHI 2026 · Poster</span>
+          </div>
+        </article>
+
+        <article class="featured-project reveal">
+          <a class="project-media" href="projects/kiriinflate/index.html" aria-label="KiriInflate project">
+            <img src="assets/optimized/kiriinflate.webp" alt="" width="800" height="450" />
+          </a>
+          <div class="project-summary">
+            <div><h3><a href="projects/kiriinflate/index.html">KiriInflate</a></h3><p>Cross-scale inflatables with large contraction and tunable stretchability.</p></div>
+            <span class="project-venue">UIST 2025</span>
+          </div>
+        </article>
+
+        <article class="featured-project reveal">
+          <a class="project-media" href="projects/th-wood/index.html" aria-label="TH-Wood project">
+            <img src="assets/optimized/th-wood.webp" alt="" width="800" height="533" loading="lazy" />
+          </a>
+          <div class="project-summary">
+            <div><h3><a href="projects/th-wood/index.html">TH-Wood</a></h3><p>Thermo-hygro-coordinating wood actuators for human–nature interaction.</p></div>
+            <span class="project-venue">CHI 2025</span>
+          </div>
+        </article>
+
+        <article class="featured-project reveal">
+          <a class="project-media" href="projects/dancing-with-inflatables/index.html" aria-label="Dancing with Inflatables project">
+            <img src="projects/dancing-with-inflatables/images/pub.png" alt="" width="800" height="450" loading="lazy" />
+          </a>
+          <div class="project-summary">
+            <div><h3><a href="projects/dancing-with-inflatables/index.html">Dancing with Inflatables</a></h3><p>Bistable inflatable wearables developed as choreographic tools.</p></div>
+            <span class="project-venue">UIST 2025 · Adjunct</span>
+          </div>
+        </article>
       </div>
+    </section>
+
+    <section class="home-section publications-preview" aria-labelledby="publications-title">
+      <div class="section-heading reveal">
+        <h2 id="publications-title">Selected publications</h2>
+        <a class="section-link" href="publication.html">All publications <span aria-hidden="true">↗</span></a>
+      </div>
+
+      <ol class="publication-list">
+        <li class="publication-row reveal">
+          <time datetime="2026">2026</time>
+          <div><h3><a href="https://doi.org/10.1145/3772363.3799091" target="_blank" rel="noopener">HygroFold: Milli-scale Shape-changing Interfaces via Toner-Transfer Patterning on Cellophane Film</a></h3><p>Yinan Zhang, Zhe Gao, <strong>Chuang Chen</strong>, Ye Tao, Guanyun Wang*</p></div>
+          <span>CHI · Poster</span>
+        </li>
+        <li class="publication-row reveal">
+          <time datetime="2025">2025</time>
+          <div><h3><a href="https://link.springer.com/article/10.1631/FITEE.2500118" target="_blank" rel="noopener">Design of plant-inspired shape-changing interfaces</a></h3><p>Junzhe Ji, <strong>Chuang Chen</strong>, Boyu Feng, Ye Tao, Guanyun Wang*</p></div>
+          <span>FITEE · Review</span>
+        </li>
+        <li class="publication-row reveal">
+          <time datetime="2025">2025</time>
+          <div><h3><a href="https://doi.org/10.1145/3746059.3747766" target="_blank" rel="noopener">KiriInflate: Fabricating Cross-Scale Inflatables with Large Contraction and Tunable Stretchability</a></h3><p>Yue Yang, <strong>Chuang Chen</strong>, et al.</p></div>
+          <span>UIST · Full Paper</span>
+        </li>
+        <li class="publication-row reveal">
+          <time datetime="2025">2025</time>
+          <div><h3><a href="https://doi.org/10.1145/3746058.3758387" target="_blank" rel="noopener">Dancing with Inflatables: Design Bistable Inflatable Wearables for Choreographic Tools</a></h3><p>Yulu Chen, <strong>Chuang Chen</strong>, Yue Yang, Ye Tao, Guanyun Wang*</p></div>
+          <span>UIST · Adjunct</span>
+        </li>
+      </ol>
+    </section>
+
+    <section class="home-section news-section" id="news" aria-labelledby="news-title">
+      <div class="section-heading reveal">
+        <h2 id="news-title">News</h2>
+        <a class="section-link" href="news.html">All news <span aria-hidden="true">↗</span></a>
+      </div>
+      <ul class="news-list">
+        <li class="reveal"><time datetime="2026">2026</time><p><a href="https://doi.org/10.1145/3772363.3799091" target="_blank" rel="noopener">HygroFold</a> was accepted as a poster at CHI 2026.</p></li>
+        <li class="reveal"><time datetime="2025">2025</time><p><a href="projects/kiriinflate/index.html">KiriInflate</a> was published as a full paper at UIST 2025.</p></li>
+        <li class="reveal"><time datetime="2025">2025</time><p><a href="projects/th-wood/index.html">TH-Wood</a> received a Best Paper Honorable Mention at CHI 2025.</p></li>
+        <li class="reveal"><time datetime="2024">2024</time><p><a href="projects/hydroskin/index.html">HydroSkin</a> and <a href="projects/snapinflatable/index.html">SnapInflatables</a> were published at CHI 2024.</p></li>
+      </ul>
     </section>
 
   </main>
 
-  <footer>
-    &copy; 2025 Chuang Chen. All Rights Reserved.
+  <footer class="site-footer">
+    <p>© 2026 Chuang Chen</p>
+    <p><a href="mailto:chenchuang@zju.edu.cn">chenchuang@zju.edu.cn</a></p>
   </footer>
-
-  <!-- 移动端汉堡菜单 JS -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const toggle = document.querySelector(".menu-toggle");
-      const nav = document.querySelector(".main-nav");
-      toggle.addEventListener("click", () => {
-        nav.classList.toggle("show");
-      });
-    });
-  </script>
-
 </body>
 </html>

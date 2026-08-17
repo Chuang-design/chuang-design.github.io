@@ -9,25 +9,26 @@
   <link rel="icon" href="../../assets/favicon.ico" type="image/x-icon" />
 </head>
 <body>
-  <header>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
     <div class="header-inner">
-      <div class="site-title"><a href="../../index.html">CHUANG</a></div>
-      <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
-      <nav class="main-nav">
-        <a href="../../project.html">Project</a>
-        <a href="../../publication.html">Publication</a>
-        <a href="../../cv.html">CV</a>
+      <a class="site-title" href="../../index.html" aria-label="Chuang Chen homepage"><span>Chuang Chen</span></a>
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-nav"><span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span></button>
+      <nav class="main-nav" id="primary-nav" aria-label="Primary navigation">
+        <a href="../../project.html" aria-current="page">Projects</a>
+        <a href="../../publication.html">Publications</a>
+        <a href="../../news.html">News</a>
         <a href="../../about.html">About</a>
       </nav>
     </div>
   </header>
 
-  <main class="content-wrapper">
+  <main id="main-content" class="content-wrapper">
 
     <!-- TODO: add banner image to images/ then uncomment -->
     <!--
     <div class="project-main-image">
-      <img src="images/banner.png" alt="Main Image of PeelFab" />
+      <img src="images/pub.png" alt="PeelFab publication preview" />
     </div>
     -->
 
@@ -45,7 +46,7 @@
           PeelFab: Designing 3D Printed Peelable Structures for 3D Masking.
         </p>
         <p>
-          <strong>Publication:</strong> <a href="https://doi.org/10.1145/3746058.3759003" target="_blank">ACM Symposium on User Interface Software and Technology (UIST) 2025, Adjunct Proceedings</a>
+          <strong>Publication:</strong> <a href="https://doi.org/10.1145/3746058.3759003" target="_blank" rel="noopener">ACM Symposium on User Interface Software and Technology (UIST) 2025, Adjunct Proceedings</a>
         </p>
       </div>
     </div>
@@ -56,17 +57,7 @@
   </main>
 
   <footer>
-    &copy; 2025 Chuang Chen &middot; <a href="mailto:chenchuang@zju.edu.cn">chenchuang@zju.edu.cn</a>
+    &copy; 2026 Chuang Chen &middot; <a href="mailto:chenchuang@zju.edu.cn">chenchuang@zju.edu.cn</a>
   </footer>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const toggle = document.querySelector(".menu-toggle");
-      const nav = document.querySelector(".main-nav");
-      toggle.addEventListener("click", () => {
-        nav.classList.toggle("show");
-      });
-    });
-  </script>
 </body>
 </html>
