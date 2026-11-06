@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://chuang-design.github.io/sitemap.xml
+Sitemap: https://chenchuang.me/sitemap.xml
