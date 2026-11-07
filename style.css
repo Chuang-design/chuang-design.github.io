@@ -942,7 +942,8 @@ main.content-wrapper {
 
 .pub-thumbnail-orthosis {
   background: #d7dbde;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center;
 }
 
 .pub-title {
