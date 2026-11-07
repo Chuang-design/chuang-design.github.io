@@ -940,17 +940,9 @@ main.content-wrapper {
   object-fit: cover;
 }
 
-.pub-thumbnail-crop {
-  overflow: hidden;
-}
-
-.pub-thumbnail-crop img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transform: scale(1.85);
-  transform-origin: 48% 59%;
+.pub-thumbnail-orthosis {
+  background: #d7dbde;
+  object-fit: contain;
 }
 
 .pub-title {
